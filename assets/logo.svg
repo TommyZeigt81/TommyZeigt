@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="160" viewBox="0 0 512 160">
+<defs>
+  <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#f6d36b"/>
+    <stop offset="1" stop-color="#b8891a"/>
+  </linearGradient>
+</defs>
+<rect x="0" y="0" width="512" height="160" rx="22" fill="#0b0b10"/>
+<rect x="18" y="18" width="124" height="124" rx="18" fill="#0f0f16" stroke="url(#g)" stroke-width="3"/>
+<path d="M48 54h64v14H78l34 38v14H48v-14h34L48 68z" fill="url(#g)"/>
+<text x="164" y="74" fill="#f2f2f2" font-family="Inter,Segoe UI,Arial" font-size="34" letter-spacing="2">TOMMYZEIGT</text>
+<text x="164" y="118" fill="url(#g)" font-family="Inter,Segoe UI,Arial" font-size="20" letter-spacing="5">COPYTRADING</text>
+</svg>

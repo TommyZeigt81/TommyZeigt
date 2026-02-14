@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+  <radialGradient id="r" cx="60%" cy="10%" r="80%">
+    <stop offset="0" stop-color="#1b1b28" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#06060a" stop-opacity="1"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#r)"/>
+<g opacity="0.16">
+  <path d="M80 760V40M200 760V40M320 760V40M440 760V40M560 760V40M680 760V40M800 760V40M920 760V40M1040 760V40M1160 760V40" stroke="#fff" stroke-width="1"/>
+  <path d="M80 720H1160M80 600H1160M80 480H1160M80 360H1160M80 240H1160M80 120H1160" stroke="#fff" stroke-width="1"/>
+</g>
+</svg>

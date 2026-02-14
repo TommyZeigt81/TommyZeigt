@@ -1,131 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TommyZeigt Copytrading</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TommyZeigt Copytrading</title>
+  <meta name="description" content="TommyZeigt Copytrading – Ergebnisse, Vorteile, Community & Kontakt über Telegram." />
+  <meta name="theme-color" content="#0b0b10" />
+  <style>
+    :root{
+      --bg:#07070a;
+      --bg2:#0b0b10;
+      --card:rgba(15,15,22,.86);
+      --card2:rgba(15,15,22,.62);
+      --text:#f2f2f2;
+      --muted:#c9c9d6;
+      --gold1:#f6d36b;
+      --gold2:#b8891a;
+      --shadow:0 18px 50px rgba(0,0,0,.55);
+      --radius:22px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 70% 0%, rgba(246,211,107,.16), transparent 55%),
+                  radial-gradient(900px 600px at 20% 10%, rgba(120,98,255,.10), transparent 60%),
+                  linear-gradient(180deg, var(--bg2), var(--bg));
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(7,7,10,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px;}
+    .brand{display:flex; align-items:center; gap:12px; min-width: 220px;}
+    .brand img{height:42px; width:auto; display:block}
+    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; align-items:center;}
+    .links a{font-size:14px; color:rgba(242,242,242,.88); padding:10px 12px; border-radius:12px; border:1px solid transparent;}
+    .links a:hover{border-color:rgba(246,211,107,.28); background:rgba(246,211,107,.06)}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; min-width: 260px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600; font-size:14px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      cursor:pointer; user-select:none; white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(246,211,107,.28); background:rgba(246,211,107,.06)}
+    .btn-gold{border:1px solid rgba(246,211,107,.40); background: linear-gradient(135deg, rgba(246,211,107,.18), rgba(184,137,26,.10));}
+    .btn-telegram{border:1px solid rgba(91,189,255,.30); background: linear-gradient(135deg, rgba(91,189,255,.16), rgba(0,0,0,.06));}
 
-<style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0e;
-color:white;
-}
+    header.hero{padding:64px 0 34px; position:relative;}
+    .hero::before{
+      content:""; position:absolute; inset:-140px -120px auto -120px; height:540px;
+      background:url("assets/bg-grid.svg") center/cover no-repeat;
+      opacity:0.35; pointer-events:none;
+    }
+    .hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; position:relative;}
+    .hero-card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::after{
+      content:""; position:absolute; inset:-2px;
+      background: radial-gradient(700px 220px at 20% 10%, rgba(246,211,107,.18), transparent 60%),
+                  radial-gradient(600px 220px at 80% 0%, rgba(120,98,255,.14), transparent 60%);
+      opacity:.8; pointer-events:none;
+    }
+    .hero-inner{position:relative}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:13px; letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(246,211,107,.90);
+      border:1px solid rgba(246,211,107,.25);
+      background:rgba(246,211,107,.06);
+      padding:8px 12px; border-radius:999px;
+    }
+    h1{margin:14px 0 10px; font-size:42px; line-height:1.08; letter-spacing:.02em;}
+    .lead{margin:0 0 18px; color:rgba(242,242,242,.82); font-size:16px; line-height:1.6; max-width:58ch;}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap}
+    .hero-bullets{margin-top:16px; display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .pill{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;
+      padding:12px 12px;
+      color:rgba(242,242,242,.86);
+      font-size:14px;
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: linear-gradient(135deg, var(--gold1), var(--gold2)); margin-top:6px; box-shadow:0 0 0 6px rgba(246,211,107,.10);}
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
+    .side{display:flex; flex-direction:column; gap:16px;}
+    .mini{
+      background:var(--card2);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .mini h3{margin:0 0 8px; font-size:16px; letter-spacing:.02em}
+    .mini p{margin:0; color:rgba(242,242,242,.78); line-height:1.55; font-size:14px}
+    .statgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;}
+    .stat{background:rgba(0,0,0,.26); border:1px solid rgba(246,211,107,.14); border-radius:16px; padding:12px;}
+    .stat .n{font-weight:800; font-size:18px; color:rgba(246,211,107,.92)}
+    .stat .l{font-size:12px; color:rgba(242,242,242,.72); margin-top:2px}
 
-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:20px 0;
-}
+    section{padding:34px 0;}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;}
+    .section-title h2{margin:0; font-size:26px; letter-spacing:.02em;}
+    .section-title span{color:rgba(242,242,242,.70); font-size:14px;}
 
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .card img{width:100%; height:auto; display:block; border-radius:18px; border:1px solid rgba(255,255,255,.06); background:#0f0f16;}
+    .card h3{margin:14px 0 6px; font-size:18px}
+    .card p{margin:0; color:rgba(242,242,242,.78); line-height:1.6; font-size:14px}
 
-.logo img{
-height:50px;
-border-radius:10px;
-}
+    .features{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+    .feat{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:18px; padding:14px;}
+    .feat .t{font-weight:800; margin-bottom:6px}
+    .feat .d{color:rgba(242,242,242,.76); font-size:14px; line-height:1.6}
 
-button{
-padding:12px 20px;
-border-radius:10px;
-border:none;
-cursor:pointer;
-font-weight:bold;
-}
+    .embed{border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,.06); background:#0f0f16; min-height:420px;}
+    .embed iframe{width:100%; height:420px; border:0; display:block}
+    .note{margin-top:10px; color:rgba(242,242,242,.70); font-size:13px; line-height:1.5;}
+    .contact{display:grid; grid-template-columns: 1fr 1fr; gap:18px;}
+    .field{width:100%; background:rgba(0,0,0,.20); border:1px solid rgba(255,255,255,.10); color:var(--text); padding:12px 12px; border-radius:14px; font-size:14px; outline:none;}
+    textarea.field{min-height:120px; resize:vertical}
+    .small{color:rgba(242,242,242,.65); font-size:12px; line-height:1.5; margin-top:10px;}
+    footer{padding:26px 0 36px; border-top:1px solid rgba(255,255,255,.06); color:rgba(242,242,242,.60); font-size:13px;}
 
-.gold{
-background:linear-gradient(180deg,#f1d58a,#d6b15a);
-color:black;
-}
-
-.telegram{
-background:#2AABEE;
-color:black;
-}
-
-.hero{
-padding:80px 0;
-}
-
-.card{
-background:#111;
-border-radius:20px;
-padding:25px;
-margin-top:20px;
-}
-
-iframe{
-width:100%;
-height:600px;
-border:none;
-border-radius:15px;
-}
-
-img{
-width:100%;
-border-radius:15px;
-margin-top:10px;
-}
-</style>
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .cta{min-width:auto}
+      .features{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
 </head>
 
 <body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <img src="assets/logo.svg" alt="TommyZeigt Copytrading Logo" />
+        </div>
 
-<div class="container">
+        <div class="links">
+          <a href="#ergebnisse">Ergebnisse</a>
+          <a href="#vorteile">Vorteile</a>
+          <a href="#community">Community</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
 
-<header>
-<div class="logo">
-<img src="assets/logo.png">
-<div>
-<div>TOMMYZEIGT</div>
-<div style="font-size:12px;color:#d6b15a">COPYTRADING</div>
-</div>
-</div>
+        <div class="cta">
+          <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn-gold" href="#kontakt">Copytrading starten</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div>
-<a href="https://t.me/TommY"><button class="telegram">Telegram</button></a>
-<a href="https://de.puprime.partners/forex-trading-account/?c=jOA3lsRMqyLSI0uMpPz5Yw==">
-<button class="gold">Copytrading starten</button>
-</a>
-</div>
-</header>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="hero-inner">
+            <div class="kicker">XAUUSD Fokus • Copytrading</div>
+            <h1>TommyZeigt Copytrading</h1>
+            <p class="lead">
+              Echte Ergebnisse. Volle Transparenz. Direkter Support über Telegram.
+              Du bekommst ein simples System: Setup verbinden, Trades kopieren, fertig.
+            </p>
 
-<div class="hero">
-<h1>TOMMYZEIGT COPYTRADING</h1>
-<p>Echte Ergebnisse. Volle Transparenz. Direkter Support über Telegram.</p>
-</div>
+            <div class="hero-actions">
+              <a class="btn btn-gold" href="#ergebnisse">Ergebnisse ansehen</a>
+              <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Fragen auf Telegram</a>
+              <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook Proof</a>
+            </div>
 
-<div class="card">
-<h2>Performance</h2>
-<iframe src="https://www.myfxbook.com/portfolio/tommyzeigt/11931259"></iframe>
-</div>
+            <div class="hero-bullets">
+              <div class="pill"><span class="dot"></span><div>Zeit sparen: keine Charts stundenlang beobachten</div></div>
+              <div class="pill"><span class="dot"></span><div>Risikokontrolle: klare Regeln und Positionsmanagement</div></div>
+              <div class="pill"><span class="dot"></span><div>Transparenz: Proofs über Myfxbook + Screenshots</div></div>
+              <div class="pill"><span class="dot"></span><div>Community: Austausch & Updates über Telegram</div></div>
+            </div>
+          </div>
+        </div>
 
-<div class="card">
-<h2>Trade Historie</h2>
-<img src="assets/trades-1.jpg">
-<img src="assets/trades-2.jpg">
-</div>
+        <div class="side">
+          <div class="mini">
+            <h3>In 3 Schritten starten</h3>
+            <p>Broker-Konto erstellen, Copy-Verbindung einrichten, Trades automatisch mitnehmen.</p>
+            <div class="statgrid">
+              <div class="stat"><div class="n">1</div><div class="l">Konto öffnen</div></div>
+              <div class="stat"><div class="n">2</div><div class="l">Verbinden</div></div>
+              <div class="stat"><div class="n">3</div><div class="l">Kopieren</div></div>
+              <div class="stat"><div class="n">24/7</div><div class="l">Support</div></div>
+            </div>
+            <p class="note">
+              Hinweis: Trading ist mit Risiko verbunden. Ergebnisse aus der Vergangenheit sind keine Garantie.
+            </p>
+          </div>
 
-<div class="card">
-<h2>Kontakt</h2>
-<p>Schreib mir direkt auf Telegram um zu starten.</p>
-<a href="https://t.me/TommY">
-<button class="telegram">Jetzt Nachricht senden</button>
-</a>
-</div>
+          <div class="mini">
+            <h3>Broker-Link (optional)</h3>
+            <p>Hier kannst du später deinen Referral-Link eintragen.</p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn btn-gold" href="#" onclick="alert('Hier deinen Broker-Link eintragen (PU Prime/Vantage/etc.)'); return false;">Account eröffnen</a>
+              <a class="btn" href="#kontakt">Setup Hilfe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-</div>
+  <section id="ergebnisse">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Ergebnisse & Proof</h2>
+        <span>Ersetze die Platzhalter durch deine echten Screenshots</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <img src="assets/trades-1.svg" alt="Ergebnisse Screenshot" />
+          <h3>Performance Screenshots</h3>
+          <p>Füge hier echte Screenshots von Trades, Wochen-Ergebnissen oder Auszahlungen ein.</p>
+        </div>
+
+        <div class="card">
+          <div class="embed">
+            <iframe
+              title="TradingView Gold Chart"
+              src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=60&hidesidetoolbar=1&saveimage=0&theme=dark&style=1&timezone=Europe%2FBerlin&withdateranges=1&hideideas=1"
+              loading="lazy">
+            </iframe>
+          </div>
+          <h3>Live Chart (XAUUSD)</h3>
+          <p>Gold im Blick. Ideal, um Content & Marktphasen zu erklären.</p>
+          <p class="note">Wenn das Widget mal nicht lädt: ersetze es durch ein Bild.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        Proof Link: <a href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener" style="text-decoration:underline; color:rgba(246,211,107,.92)">Myfxbook Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="vorteile">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Warum Copytrading?</h2>
+        <span>Fakten + klare Vorteile</span>
+      </div>
+
+      <div class="features">
+        <div class="feat"><div class="t">Zeitersparnis</div><div class="d">Du musst nicht ständig am Chart hängen. Trades laufen, sobald du verbunden bist.</div></div>
+        <div class="feat"><div class="t">Klare Regeln</div><div class="d">Kein Bauchgefühl. Fokus auf ein sauberes System und nachvollziehbare Entscheidungen.</div></div>
+        <div class="feat"><div class="t">Risikomanagement</div><div class="d">Positionsgrößen & Risiko-Logik sind wichtiger als “schnell reich”. Kontrolle steht vorne.</div></div>
+        <div class="feat"><div class="t">Transparenz</div><div class="d">Myfxbook + Screenshots. Du siehst, was passiert und warum es passiert.</div></div>
+        <div class="feat"><div class="t">Support</div><div class="d">Direkt über Telegram. Kurze Wege, schnelle Antworten, klare Schritte.</div></div>
+        <div class="feat"><div class="t">Community</div><div class="d">Austausch, Updates, Markt-Kommentare und Motivation in einer Gruppe.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Community</h2>
+        <span>Telegram ist dein Hub</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <img src="assets/trades-2.svg" alt="Community Screenshot" />
+          <h3>Updates & Austausch</h3>
+          <p>Marktphasen, wichtige News, Setups und schnelle Infos direkt in Telegram.</p>
+        </div>
+
+        <div class="card">
+          <h3>Was du bekommst</h3>
+          <p>• Schritt-für-Schritt Setup Hilfe</p>
+          <p>• Status Updates & Hinweise</p>
+          <p>• Klarer Ablauf fürs Copytrading</p>
+          <p>• Support bei Fragen</p>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram öffnen</a>
+            <a class="btn btn-gold" href="#kontakt">Jetzt starten</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Kontakt</h2>
+        <span>Am schnellsten über Telegram</span>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3>Direktkontakt</h3>
+          <p>Schreib mir kurz, dann bekommst du die Setup-Schritte und wir verbinden dein Konto.</p>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram: @TommY</a>
+            <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook ansehen</a>
+          </div>
+          <p class="small">Kontaktformular mit echter Email geht auf GitHub Pages nur mit extra Dienst (Formspree o.ä.).</p>
+        </div>
+
+        <div class="card">
+          <h3>Kurze Anfrage (zum Kopieren)</h3>
+          <p>Hier kurz ausfüllen, dann kopieren und in Telegram einfügen.</p>
+          <input class="field" id="name" placeholder="Dein Name" />
+          <input class="field" id="handle" placeholder="Telegram Username (optional)" style="margin-top:10px" />
+          <textarea class="field" id="msg" placeholder="Worum geht’s? Konto / Setup / Fragen ..." style="margin-top:10px"></textarea>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn btn-gold" onclick="copyMsg()">Text kopieren</button>
+            <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">In Telegram senden</a>
+          </div>
+          <div class="small" id="copynote" style="display:none">Kopiert ✅ Jetzt in Telegram einfügen und senden.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center">
+        <div>© <span id="y"></span> TommyZeigt Copytrading</div>
+        <div style="opacity:.85">Risk Hinweis: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    function copyMsg(){
+      const name = (document.getElementById('name').value || '').trim();
+      const handle = (document.getElementById('handle').value || '').trim();
+      const msg = (document.getElementById('msg').value || '').trim();
+      const text =
+`Hi Tommy,
+Name: ${name || "-"}
+Telegram: ${handle || "-"}
+Nachricht: ${msg || "-"}
+
+Ich möchte mit Copytrading starten. Bitte schick mir die Setup-Schritte.`;
+      navigator.clipboard.writeText(text).then(()=>{
+        const n = document.getElementById('copynote');
+        n.style.display = 'block';
+        setTimeout(()=> n.style.display = 'none', 3200);
+      });
+    }
+  </script>
 </body>
 </html>

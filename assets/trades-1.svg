@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<defs>
+  <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#f6d36b"/>
+    <stop offset="1" stop-color="#b8891a"/>
+  </linearGradient>
+  <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#0b0b10"/>
+    <stop offset="1" stop-color="#07070a"/>
+  </linearGradient>
+</defs>
+<rect width="1400" height="900" rx="40" fill="url(#bg)"/>
+<path d="M90 690 C 190 520, 270 760, 360 590 S 520 540, 610 430 S 780 540, 900 380 S 1100 330, 1250 220" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.9"/>
+<g opacity="0.35">
+  <path d="M120 760V140M260 760V140M400 760V140M540 760V140M680 760V140M820 760V140M960 760V140M1100 760V140M1240 760V140" stroke="#ffffff" stroke-width="1"/>
+  <path d="M120 720H1280M120 600H1280M120 480H1280M120 360H1280M120 240H1280" stroke="#ffffff" stroke-width="1"/>
+</g>
+<rect x="90" y="90" width="1220" height="190" rx="26" fill="#0f0f16" stroke="url(#gold)" stroke-width="2" opacity="0.95"/>
+<text x="140" y="170" fill="#f2f2f2" font-family="Inter,Segoe UI,Arial" font-size="48" letter-spacing="1">Ergebnisse</text>
+<text x="140" y="230" fill="#c9c9d6" font-family="Inter,Segoe UI,Arial" font-size="26">Transparenz durch echte Proofs</text>
+<rect x="90" y="320" width="1220" height="440" rx="26" fill="#0f0f16" opacity="0.65"/>
+<text x="140" y="400" fill="url(#gold)" font-family="Inter,Segoe UI,Arial" font-size="28" letter-spacing="4">BEISPIEL-SCREENSHOT</text>
+<text x="140" y="450" fill="#c9c9d6" font-family="Inter,Segoe UI,Arial" font-size="22">Ersetze dieses Bild später durch echte Ergebnisse (Myfxbook / Screenshots).</text>
+</svg>
