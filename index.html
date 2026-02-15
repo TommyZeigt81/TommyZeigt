@@ -1,29 +1,31 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>TommyZeigt Copytrading</title>
-  <meta name="description" content="Lead Generator für TommyZeigt Copytrading: Telegram + verifizierte Performance + Setup Anfrage." />
-  <meta name="theme-color" content="#0b0b10" />
-  <meta property="og:title" content="TommyZeigt Copytrading" />
-  <meta property="og:description" content="Professionelles Copytrading mit verifizierter Live Performance. Setup in Minuten." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo.svg" />
-  <link rel="icon" href="assets/logo.svg" />
+  <meta name="description" content="Business Funnel: Leads sammeln, Vertrauen aufbauen, Telegram Setup, PU Prime Konto, verifizierte Ergebnisse."/>
+  <meta name="theme-color" content="#0b0b10"/>
+  <meta property="og:title" content="TommyZeigt Copytrading"/>
+  <meta property="og:description" content="Professionelles Copytrading mit verifizierter Live Performance. Setup in Minuten."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/logo.svg"/>
+  <link rel="icon" href="assets/logo.svg"/>
 
-  <!-- Speed -->
-  <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml" />
+  <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml"/>
+  <link rel="preload" href="assets/bg-grid.svg" as="image" type="image/svg+xml"/>
+
   <style>
     :root{
       --bg:#07070a; --bg2:#0b0b10;
+      --card:rgba(16,16,22,.72);
       --text:#f2f2f2; --muted:#c9c9d6;
       --gold1:#f6d36b; --gold2:#b8891a;
       --blue1:#66d3ff;
+      --line:rgba(255,255,255,.08);
       --shadow:0 18px 55px rgba(0,0,0,.55);
       --r:18px; --r2:26px;
-      --max:1120px; --navH:76px;
-      --line:rgba(255,255,255,.08);
+      --max:1140px; --navH:76px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -44,7 +46,7 @@
 
     .topbar{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,7,10,.70);
+      background: rgba(7,7,10,.72);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
@@ -58,7 +60,7 @@
       border:1px solid transparent;
     }
     .menu a:hover{border-color: rgba(246,211,107,.28); background: rgba(246,211,107,.06)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; min-width: 340px}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; min-width: 360px}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -66,37 +68,37 @@
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.04);
       color:var(--text);
-      font-weight:800; font-size:13px;
+      font-weight:900; font-size:13px;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
       user-select:none; cursor:pointer; white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px); border-color: rgba(246,211,107,.28); background: rgba(246,211,107,.06)}
     .btn:active{transform: translateY(0)}
-    .btn-gold{border-color: rgba(246,211,107,.40); background: linear-gradient(135deg, rgba(246,211,107,.18), rgba(184,137,26,.10));}
-    .btn-telegram{border-color: rgba(102,211,255,.40); background: linear-gradient(135deg, rgba(102,211,255,.20), rgba(0,0,0,.10));}
-    .btn svg{width:18px; height:18px}
-    .btn small{font-weight:800; color:rgba(242,242,242,.70)}
+    .btn-gold{border-color: rgba(246,211,107,.42); background: linear-gradient(135deg, rgba(246,211,107,.20), rgba(184,137,26,.10));}
+    .btn-telegram{border-color: rgba(102,211,255,.45); background: linear-gradient(135deg, rgba(102,211,255,.22), rgba(0,0,0,.10));}
+    .btn small{font-weight:900; color:rgba(242,242,242,.72)}
 
-    header.hero{padding:54px 0 22px; position:relative}
+    header.hero{padding:56px 0 18px; position:relative}
     header.hero::before{
       content:"";
       position:absolute; inset:-160px -120px auto -120px;
       height: 620px;
       background: url("assets/bg-grid.svg") center/cover no-repeat;
-      opacity:.26;
+      opacity:.24;
       pointer-events:none;
     }
     header.hero::after{
       content:"";
       position:absolute; inset:0;
       background: url("assets/noise.svg") center/240px 240px repeat;
-      opacity:.12;
+      opacity:.10;
       pointer-events:none;
       mix-blend-mode: overlay;
     }
-    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch; position:relative}
+    .heroGrid{display:grid; grid-template-columns: 1.12fr .88fr; gap:18px; align-items:stretch; position:relative}
+
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--r2);
       box-shadow: var(--shadow);
@@ -111,8 +113,8 @@
       background: rgba(246,211,107,.06);
       padding:8px 12px; border-radius:999px;
     }
-    h1{margin:14px 0 10px; font-size: clamp(32px, 4.3vw, 48px); line-height:1.05; letter-spacing:.02em}
-    .lead{margin:0 0 14px; color:rgba(242,242,242,.82); font-size:15px; line-height:1.65; max-width:62ch}
+    h1{margin:14px 0 10px; font-size: clamp(32px, 4.3vw, 52px); line-height:1.03; letter-spacing:.02em}
+    .lead{margin:0 0 12px; color:rgba(242,242,242,.82); font-size:15px; line-height:1.65; max-width:64ch}
     .trustline{margin:0; color:rgba(242,242,242,.70); font-size:13px; line-height:1.6}
     .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
     .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
@@ -138,15 +140,16 @@
 
     .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-
     .box{background: rgba(0,0,0,.20); border:1px solid rgba(255,255,255,.08); border-radius: var(--r); padding:16px}
     .box h3{margin:0 0 8px; font-size:16px}
     .box p{margin:0; color:rgba(242,242,242,.76); line-height:1.6; font-size:13px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .badge{display:inline-flex; gap:10px; align-items:center; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); color:rgba(242,242,242,.80); font-size:12px}
 
     .tableWrap{border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden; background: rgba(0,0,0,.18)}
     table{width:100%; border-collapse:collapse; font-size:13px}
     th, td{padding:12px 12px; border-bottom:1px solid rgba(255,255,255,.07); text-align:left}
-    th{color:rgba(242,242,242,.72); font-weight:800; background: rgba(255,255,255,.03)}
+    th{color:rgba(242,242,242,.72); font-weight:900; background: rgba(255,255,255,.03)}
     tr:last-child td{border-bottom:0}
     .pnlPos{color: rgba(246,211,107,.95); font-weight:900}
     .pnlNeg{color: rgba(255,120,120,.92); font-weight:900}
@@ -155,8 +158,14 @@
     textarea.field{min-height:120px; resize:vertical}
     .small{color:rgba(242,242,242,.62); font-size:12px; line-height:1.55; margin-top:10px}
 
+    .faq{display:grid; gap:12px}
+    details{border:1px solid rgba(255,255,255,.08); border-radius:18px; background: rgba(0,0,0,.20); padding:12px 14px}
+    summary{cursor:pointer; font-weight:900; list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:rgba(242,242,242,.74); line-height:1.55}
+
     .floating{position:fixed; right:16px; bottom:16px; z-index:60; display:flex; flex-direction:column; gap:10px}
-    .fab{width:54px; height:54px; border-radius:16px; display:grid; place-items:center; border:1px solid rgba(102,211,255,.40); background: linear-gradient(135deg, rgba(102,211,255,.22), rgba(0,0,0,.10)); box-shadow: var(--shadow)}
+    .fab{width:54px; height:54px; border-radius:16px; display:grid; place-items:center; border:1px solid rgba(102,211,255,.45); background: linear-gradient(135deg, rgba(102,211,255,.22), rgba(0,0,0,.10)); box-shadow: var(--shadow)}
     .fab span{font-size:20px}
 
     .bottomBar{
@@ -187,12 +196,12 @@
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#start">
-          <img src="assets/logo.svg" alt="TommyZeigt Copytrading" />
+          <img src="assets/logo.svg" alt="TommyZeigt Copytrading"/>
         </a>
 
         <nav class="menu" aria-label="Navigation">
           <a href="#ergebnisse">Ergebnisse</a>
-          <a href="#vorteile">Vorteile</a>
+          <a href="#system">System</a>
           <a href="#starten">Start</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
@@ -210,11 +219,11 @@
       <div class="wrap heroGrid">
         <section class="card">
           <div class="pad">
-            <div class="kicker">Lead Generator · High Conversion</div>
+            <div class="kicker">Business Funnel · Lead Generator</div>
             <h1>Professionelles Copytrading mit verifizierter Live Performance</h1>
             <p class="lead">
               Verbinde dein Trading Konto und kopiere Echtgeld-Trades automatisch in Echtzeit.
-              Kein Stress, keine manuelle Analyse, klarer Prozess.
+              Klarer Prozess, transparente Daten und direkter Telegram Support.
             </p>
             <p class="trustline">Öffentlich dokumentierte Performance · Volle Transparenz · Kontrolliertes Risiko</p>
 
@@ -230,6 +239,12 @@
               <div class="chip"><span class="dot"></span> Verifizierte Historie</div>
             </div>
 
+            <div class="badges">
+              <div class="badge">✅ Echtgeld Trades</div>
+              <div class="badge">✅ Externes Tracking</div>
+              <div class="badge">✅ Setup Hilfe</div>
+            </div>
+
             <div class="small">Risiko Hinweis: Trading kann zu Verlusten führen. Ergebnisse aus der Vergangenheit sind keine Garantie.</div>
           </div>
         </section>
@@ -238,17 +253,14 @@
           <div class="pad">
             <div class="sectionTitle" style="margin:0 0 10px">
               <h2 style="font-size:18px">Letzte Trades automatisch</h2>
-              <p>lädt aus assets/trades.json</p>
+              <p>aktualisierbar über assets/trades.json</p>
             </div>
 
             <div class="tableWrap">
               <table aria-label="Letzte Trades">
                 <thead>
                   <tr>
-                    <th>Zeit</th>
-                    <th>Symbol</th>
-                    <th>Richtung</th>
-                    <th>PnL</th>
+                    <th>Zeit</th><th>Symbol</th><th>Richtung</th><th>PnL</th>
                   </tr>
                 </thead>
                 <tbody id="tradesBody">
@@ -261,8 +273,9 @@
             <div class="box">
               <h3>Live Tracking</h3>
               <p>Performance ist öffentlich einsehbar. Öffne Myfxbook im neuen Tab.</p>
-              <div style="margin-top:12px">
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
                 <a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook öffnen</a>
+                <a class="btn" href="#ergebnisse">Mehr Details</a>
               </div>
             </div>
           </div>
@@ -283,17 +296,18 @@
             <p>Öffentlich dokumentierte Historie über Myfxbook. Jeder kann nachprüfen, was passiert.</p>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Live Ergebnisse ansehen</a>
-              <a class="btn" href="#kontakt">Setup Anfrage</a>
+              <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Fragen auf Telegram</a>
             </div>
+            <div class="small">Hinweis: Manche Browser blocken Einbettungen – deshalb öffnen wir Myfxbook im Tab.</div>
           </div>
 
           <div class="box">
             <h3>Gold Livechart (XAUUSD)</h3>
-            <p>Direkt auf der Seite, ohne schwere Skripte. Wenn es blockiert: Adblock kurz deaktivieren.</p>
-            <div style="margin-top:12px" class="tableWrap">
+            <p>Widget lädt erst beim Scrollen (Desktop Speed). Wenn es blockiert: Adblock kurz deaktivieren.</p>
+            <div class="tableWrap" style="margin-top:12px">
               <iframe
                 title="TradingView XAUUSD"
-                src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=60&hidesidetoolbar=1&saveimage=0&theme=dark&style=1&timezone=Europe%2FBerlin&withdateranges=1&hideideas=1"
+                data-src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=60&hidesidetoolbar=1&saveimage=0&theme=dark&style=1&timezone=Europe%2FBerlin&withdateranges=1&hideideas=1"
                 loading="lazy"
                 style="width:100%; height:360px; border:0; display:block"></iframe>
             </div>
@@ -302,7 +316,7 @@
       </div>
     </section>
 
-    <section id="vorteile" class="anchor">
+    <section id="system" class="anchor">
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Warum dieses System funktioniert</h2>
@@ -320,7 +334,20 @@
           </div>
           <div class="box">
             <h3>Transparenz</h3>
-            <p>Live Performance und Historie sind öffentlich. Keine Demo, kein Fake, echte Daten.</p>
+            <p>Echte Daten: Myfxbook, Historie, aktuelle Trades. Keine Demo, kein Fake.</p>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="grid2">
+          <div class="box">
+            <h3>Für wen ist das?</h3>
+            <p>Für alle, die ein klares Setup wollen – ohne jeden Tag Charts zu analysieren. Du bekommst den Prozess + Support.</p>
+          </div>
+          <div class="box">
+            <h3>Wichtig</h3>
+            <p>Trading ist nie risikofrei. Darum steht kontrolliertes Risiko im Fokus. Handle verantwortungsvoll.</p>
           </div>
         </div>
       </div>
@@ -349,6 +376,26 @@
             </div>
           </div>
         </div>
+
+        <div style="height:14px"></div>
+
+        <div class="box">
+          <h3>FAQ</h3>
+          <div class="faq">
+            <details>
+              <summary>Wie schnell kann ich starten?</summary>
+              <p>Telegram öffnen, „Start“ schreiben, Konto verbinden – oft am selben Tag möglich.</p>
+            </details>
+            <details>
+              <summary>Brauche ich Erfahrung?</summary>
+              <p>Nein. Das Setup ist geführt. Du bekommst Schritt-für-Schritt Hilfe.</p>
+            </details>
+            <details>
+              <summary>Ist das risikofrei?</summary>
+              <p>Nein. Trading hat immer Risiko. Darum: Risiko-Einstellungen sauber setzen.</p>
+            </details>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -356,42 +403,37 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Setup Anfrage</h2>
-          <p>Lead System: Formular → Thank You Page</p>
+          <p>Leadsystem aktiv (Formspree)</p>
         </div>
 
         <div class="grid2">
           <div class="box">
             <h3>Direkter Kontakt</h3>
             <p>Wenn du es schnell willst: Schreib mir auf Telegram „Start“.</p>
-            <div style="margin-top:12px">
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram: @TommY</a>
+              <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Live Ergebnisse</a>
             </div>
             <div class="small">Du kannst zusätzlich das Formular nutzen, damit ich dich zuverlässig zurückkontaktiere.</div>
           </div>
 
           <div class="box">
             <h3>Formular</h3>
-
-            <!-- Lead System: Formspree -->
-            <form id="leadForm" method="POST" action="https://formspree.io/f/mkovrqqq" novalidate>
-              <input class="field" name="name" placeholder="Name" required />
+            <form method="POST" action="https://formspree.io/f/mkovrqqq">
+              <input class="field" name="name" placeholder="Name" required/>
               <div style="height:10px"></div>
-              <input class="field" name="email" type="email" placeholder="E-Mail" required />
+              <input class="field" name="email" type="email" placeholder="E-Mail" required/>
               <div style="height:10px"></div>
-              <input class="field" name="telegram" placeholder="Telegram Username (optional)" />
+              <input class="field" name="telegram" placeholder="Telegram Username (optional)"/>
               <div style="height:10px"></div>
               <textarea class="field" name="message" placeholder="Worum geht’s? Konto / Setup / Fragen ..." required></textarea>
 
-              <input type="hidden" name="_subject" value="Neue Setup Anfrage – TommyZeigt Copytrading" />
-              <input type="hidden" name="_redirect" value="thankyou.html" />
+              <input type="hidden" name="_subject" value="Neue Setup Anfrage – TommyZeigt Copytrading"/>
+              <input type="hidden" name="_redirect" value="thankyou.html"/>
 
               <div style="height:12px"></div>
               <button class="btn btn-gold" type="submit">Anfrage senden</button>
-
-              <div class="small">
-                Hinweis: In index.html oben bei action musst du DEINFORMID eintragen (Formspree).
-                Alternativ: Telegram nutzen.
-              </div>
+              <div class="small">Nach Absenden kommst du auf die Danke-Seite mit den nächsten Schritten.</div>
             </form>
           </div>
         </div>
@@ -426,7 +468,7 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Auto Trades from JSON
+    // Auto Trades
     (async function(){
       try {
         const res = await fetch('assets/trades.json', {cache:'no-store'});
@@ -445,14 +487,25 @@
           `;
           body.appendChild(tr);
         });
-        if(!data.length){
-          body.innerHTML = '<tr><td colspan="4">noch keine Daten</td></tr>';
-        }
+        if(!data.length) body.innerHTML = '<tr><td colspan="4">noch keine Daten</td></tr>';
       } catch(e) {
         const body = document.getElementById('tradesBody');
         body.innerHTML = '<tr><td colspan="4">konnte Trades nicht laden</td></tr>';
       }
     })();
+
+    // Lazy-load iframes with data-src (speed)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          const ifr = e.target;
+          const src = ifr.getAttribute('data-src');
+          if(src && !ifr.src) ifr.src = src;
+          io.unobserve(ifr);
+        }
+      });
+    }, {rootMargin:'200px'});
+    document.querySelectorAll('iframe[data-src]').forEach(ifr => io.observe(ifr));
   </script>
 </body>
 </html>
