@@ -330,7 +330,7 @@ textarea.input{min-height:120px; resize:vertical}
       <nav class="links" aria-label="Seitenmenü">
         <a href="#vorteile" data-scroll>Vorteile</a>
         <a href="#ablauf" data-scroll>Ablauf</a>
-        <a href="#proof" data-scroll>Proof</a>
+        <a href="#proof" data-scroll>Ergebnisse</a>
         <a href="#kontakt" data-scroll>Kontakt</a>
       
         <a href="support.html">Support</a>
@@ -351,12 +351,12 @@ textarea.input{min-height:120px; resize:vertical}
           <h1 class="h1"><span class="grad">Copytrading</span> das sich wie ein Business anfühlt.</h1>
           <p class="lead">
             Du willst Trades kopieren, ohne den ganzen Tag am Chart zu kleben.
-            Hier bekommst du einen klaren Ablauf, echtes Proof und direkten Support Support.
+            Hier bekommst du einen klaren Ablauf, echtes Ergebnisse und direkten Support Support.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-gold" href="#kontakt" data-scroll>Jetzt Platz sichern</a>
-            <a class="btn" href="#proof" data-scroll>Proof ansehen</a>
+            <a class="btn" href="#proof" data-scroll>Ergebnisse ansehen</a>
           </div>
 
           <div class="badges">
@@ -372,7 +372,7 @@ textarea.input{min-height:120px; resize:vertical}
 
           <div class="stat-grid" role="list">
             <div class="stat" role="listitem">
-              <div class="v">Live Proof</div>
+              <div class="v">Live Ergebnisse</div>
               <div class="k">Myfxbook / Trade-History</div>
             </div>
             <div class="stat" role="listitem">
@@ -411,7 +411,7 @@ textarea.input{min-height:120px; resize:vertical}
           <div class="feature">
             <div class="icon">02</div>
             <h3>Transparenz</h3>
-            <p>Du bekommst Proof über Performance und Trade-Historie. Keine leeren Versprechen – sondern nachvollziehbare Daten.</p>
+            <p>Du bekommst Ergebnisse über Performance und Trade-Historie. Keine leeren Versprechen – sondern nachvollziehbare Daten.</p>
           </div>
           <div class="feature">
             <div class="icon">03</div>
@@ -440,7 +440,7 @@ textarea.input{min-height:120px; resize:vertical}
               <div class="num">2</div>
               <div>
                 <b>Broker Account anlegen</b>
-                <span>Nutze PU Prime (Referral) und richte dein Konto ein. Link unten im Proof-Bereich.</span>
+                <span>Nutze PU Prime (Referral) und richte dein Konto ein. Link unten im Ergebnisse-Bereich.</span>
               </div>
             </div>
             <div class="step">
@@ -471,7 +471,7 @@ textarea.input{min-height:120px; resize:vertical}
 
     <section id="proof" class="section">
       <div class="container">
-        <h2>Proof & Vertrauen</h2>
+        <h2>Verifizierte Ergebnisse</h2>
         <p class="top">Hier verlinkst du deine Performance und den Broker. Wenn du mir deinen PU Prime Link gibst, setze ich ihn perfekt ein.</p>
 
         <div class="grid3">
@@ -566,7 +566,7 @@ textarea.input{min-height:120px; resize:vertical}
   </script>
 
   <!-- Support Floating Button + Live Chat -->
-  <button class="tz-support-fab" type="button" aria-label="Support Chat öffnen" onclick="TZ_CHAT.open()">💬</button>
+  <button id="tzSupportFab" class="tz-support-fab" type="button" aria-label="Support Chat öffnen">💬</button>
 
   <div id="tzChat" class="tz-chat" aria-hidden="true">
     <div class="tz-chat-head">
@@ -783,6 +783,13 @@ textarea.input{min-height:120px; resize:vertical}
 
       return { open, close, setLang };
     })();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const fab = document.getElementById('tzSupportFab');
+      if(fab) fab.addEventListener('click', () => TZ_CHAT.open());
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape') TZ_CHAT.close(); });
+    });
+    // end chat
   </script>
 
 </body>
