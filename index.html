@@ -1,67 +1,497 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TommyZeigt Copytrading</title>
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#07070a;
-  color:white;
-}
-.container{
-  width:90%;
-  max-width:1000px;
-  margin:60px auto;
-}
-h1{
-  font-size:36px;
-}
-.card{
-  background:#121218;
-  padding:20px;
-  border-radius:12px;
-  margin-top:20px;
-}
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 18px;
-  border-radius:8px;
-  background:gold;
-  color:black;
-  text-decoration:none;
-  font-weight:bold;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b10" />
+  <meta name="description" content="TommyZeigt Copytrading – echte Ergebnisse, klare Regeln, direkter Support über Telegram." />
+  <title>TommyZeigt Copytrading</title>
+
+  <style>
+    :root{
+      --bg:#07070a;
+      --bg2:#0b0b10;
+      --card:#111118;
+      --card2:#141422;
+      --text:#f3f4f6;
+      --muted:#b6b7c0;
+      --gold:#f7d24c;
+      --gold2:#b98a22;
+      --stroke:rgba(255,255,255,.08);
+      --shadow: 0 18px 60px rgba(0,0,0,.65);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(247,210,76,.12), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(185,138,34,.10), transparent 55%),
+                  linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, #060608 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .container{max-width:1100px; margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,7,10,.55);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:220px;
+    }
+    .brand img{width:36px; height:36px; object-fit:contain; border-radius:10px}
+    .brand .t1{font-weight:800; letter-spacing:.2px}
+    .brand .t2{font-size:12px; color:var(--muted); margin-top:2px}
+    .links{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      font-size:13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(247,210,76,.35)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      background: linear-gradient(180deg, var(--gold) 0%, #f0c536 100%);
+      color:#141106;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid rgba(0,0,0,.18);
+      box-shadow: 0 14px 34px rgba(247,210,76,.18);
+      transition: transform .15s ease, filter .15s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.02)}
+    .btn.secondary{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow:none;
+      font-weight:700;
+    }
+    .hero{padding:46px 0 26px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
+      border:1px solid var(--stroke);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .glow{
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 260px at 20% 0%, rgba(247,210,76,.18), transparent 60%),
+                  radial-gradient(500px 240px at 80% 10%, rgba(185,138,34,.16), transparent 62%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero h1{
+      margin:0;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+      position:relative;
+      z-index:1;
+    }
+    .hero p{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.5;
+      position:relative;
+      z-index:1;
+      max-width:60ch;
+    }
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; position:relative; z-index:1}
+    .mini{
+      margin-top:16px;
+      display:flex; gap:12px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+      position:relative; z-index:1
+    }
+    .mini span{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+    }
+    .side{
+      background: linear-gradient(180deg, rgba(17,17,24,.85) 0%, rgba(17,17,24,.55) 100%);
+      border:1px solid var(--stroke);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .kpi{
+      padding:14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .kpi .h{font-weight:800}
+    .kpi .d{color:var(--muted); font-size:13px; margin-top:6px; line-height:1.45}
+    section{padding:28px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .section-title h2{margin:0; font-size:22px; letter-spacing:-.2px}
+    .section-title .sub{color:var(--muted); font-size:13px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      background: linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
+      border:1px solid var(--stroke);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .media{
+      margin-top:12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+      max-height:320px;
+    }
+    .two-img{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      padding:10px;
+    }
+    .thumb{
+      border-radius: 12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      cursor:pointer;
+    }
+    .thumb img{width:100%; height:100%; display:block; object-fit:cover}
+    .note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.5;
+    }
+    .cta{
+      padding:22px;
+      background: radial-gradient(700px 260px at 20% 0%, rgba(247,210,76,.14), transparent 62%),
+                  linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
+      border:1px solid rgba(247,210,76,.22);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .cta .left{max-width:70ch}
+    .cta .left .t{font-weight:900; font-size:18px}
+    .cta .left .d{color:var(--muted); font-size:13px; margin-top:6px; line-height:1.5}
+    .footer{
+      padding:26px 0 42px;
+      color:rgba(255,255,255,.55);
+      font-size:12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top:20px;
+    }
+
+    /* Lightbox */
+    .lb{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.86);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:200;
+    }
+    .lb.open{display:flex}
+    .lb img{
+      max-width:min(1100px, 96vw);
+      max-height: 90vh;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 30px 90px rgba(0,0,0,.75);
+    }
+    .lb .x{
+      position:absolute; top:14px; right:14px;
+      width:44px; height:44px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero h1{font-size:38px}
+      .card{grid-column: span 12}
+    }
+    @media (max-width: 560px){
+      .hero h1{font-size:34px}
+      .two-img{grid-template-columns:1fr}
+      .brand{min-width:auto}
+    }
+  </style>
 </head>
+
 <body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <img src="assets/logo.png" alt="TommyZeigt" onerror="this.style.display='none'"/>
+          <div>
+            <div class="t1">TommyZeigt</div>
+            <div class="t2">Copytrading · Gold Fokus</div>
+          </div>
+        </div>
 
-<div class="container">
-<h1>TommyZeigt Copytrading</h1>
+        <div class="links">
+          <a class="chip" href="#ergebnisse">Ergebnisse</a>
+          <a class="chip" href="#vorteile">Vorteile</a>
+          <a class="chip" href="#proof">Proof</a>
+          <a class="chip" href="#kontakt">Kontakt</a>
+          <a class="btn secondary" target="_blank" href="https://t.me/TommY">Telegram</a>
+          <a class="btn" target="_blank" href="PU_PRIME_LINK_HIER_EINTRAGEN">PU Prime starten</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
-<h2>Live Performance</h2>
-<p>Öffentliche Myfxbook Performance mit vollständiger Historie.</p>
-<a class="btn" target="_blank" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259">Performance ansehen</a>
-</div>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="glow"></div>
+          <h1>Copy meine Trades.<br>Ohne Stress.</h1>
+          <p>Du willst Ergebnisse sehen, aber keine Zeit für Charts? Dann kopiere meine Trades automatisch und erhalte Support direkt über Telegram.</p>
 
-<div class="card">
-<h2>Telegram Support</h2>
-<p>Direkter Kontakt und Setup Hilfe.</p>
-<a class="btn" target="_blank" href="https://t.me/TommY">Telegram öffnen</a>
-</div>
+          <div class="hero-actions">
+            <a class="btn" target="_blank" href="PU_PRIME_LINK_HIER_EINTRAGEN">Account eröffnen</a>
+            <a class="btn secondary" href="#proof">Proof ansehen</a>
+            <a class="btn secondary" target="_blank" href="https://t.me/TommY">Telegram Support</a>
+          </div>
 
-<div class="card">
-<h2>Broker Account</h2>
-<p>Eröffne deinen Trading Account und starte Copytrading.</p>
-<a class="btn" target="_blank" href="#">PU Prime Account eröffnen</a>
-</div>
+          <div class="mini">
+            <span>⏱️ Zeit sparen</span>
+            <span>🧠 Klare Regeln</span>
+            <span>🛡️ Risiko im Blick</span>
+            <span>📈 Fokus XAUUSD</span>
+          </div>
+        </div>
 
-</div>
+        <aside class="side">
+          <div class="kpi">
+            <div class="h">So läuft’s ab</div>
+            <div class="d">Account eröffnen ✅ Copy verbinden ✅ Trades laufen automatisch ✅</div>
+          </div>
+          <div class="kpi">
+            <div class="h">Support</div>
+            <div class="d">Setup Hilfe und Fragen direkt über Telegram.</div>
+          </div>
+          <div class="kpi">
+            <div class="h">Transparenz</div>
+            <div class="d">Myfxbook Portfolio + Trade Historie als Screenshots.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
 
+  <main>
+    <section id="ergebnisse">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ergebnisse</h2>
+          <div class="sub">Auszüge aus echten Trades</div>
+        </div>
+
+        <div class="grid">
+          <div class="card" style="grid-column: span 7;">
+            <h3>Trade Auszug 1</h3>
+            <p>Direkte Einsicht in Trade-Verlauf, Entries und Exits.</p>
+            <div class="media">
+              <img src="assets/trades-1.jpg" alt="Trades 1" onerror="this.closest('.media').style.display='none'">
+            </div>
+          </div>
+
+          <div class="card" style="grid-column: span 5;">
+            <h3>Trade Auszug 2</h3>
+            <p>Weitere Beispiele für Konsistenz und saubere Abwicklung.</p>
+            <div class="media">
+              <img src="assets/trades-2.jpg" alt="Trades 2" onerror="this.closest('.media').style.display='none'">
+            </div>
+            <div class="note">Wenn du willst, lade ich regelmäßig neue Screenshots hoch.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="container">
+        <div class="section-title">
+          <h2>Copytrading Vorteile</h2>
+          <div class="sub">Einfach, klar, schnell startklar</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Automatisch</h3>
+            <p>Trades werden kopiert, auch wenn du nicht am PC bist.</p>
+          </div>
+          <div class="card">
+            <h3>Plan statt Chaos</h3>
+            <p>Fokus auf klare Setups und nachvollziehbare Entscheidungen.</p>
+          </div>
+          <div class="card">
+            <h3>Support dabei</h3>
+            <p>Du bist nicht allein: Setup Hilfe und Fragen über Telegram.</p>
+          </div>
+          <div class="card">
+            <h3>Gold Fokus</h3>
+            <p>XAUUSD ist mein Schwerpunkt – volatil, aber mit System.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="container">
+        <div class="section-title">
+          <h2>Proof & Vertrauen</h2>
+          <div class="sub">Transparenz, Historie, direkter Kontakt</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Live Performance</h3>
+            <p>Öffentliche Myfxbook Performance mit vollständiger Historie.</p>
+            <a class="btn" target="_blank" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259">Performance ansehen</a>
+          </div>
+
+          <div class="card">
+            <h3>Telegram Support</h3>
+            <p>Direkter Kontakt und Setup Hilfe.</p>
+            <a class="btn" target="_blank" href="https://t.me/TommY">Telegram öffnen</a>
+          </div>
+
+          <div class="card" style="grid-column: span 12;">
+            <h3>Trade Historie Screenshots</h3>
+            <p>Zusätzlicher Proof: komplette Listenansicht als Screenshot (zum Reinzoomen anklicken).</p>
+
+            <div class="media">
+              <div class="two-img">
+                <div class="thumb" data-img="assets/trades-history-1.jpg">
+                  <img src="assets/trades-history-1.jpg" alt="Trade Historie 1">
+                </div>
+                <div class="thumb" data-img="assets/trades-history-2.jpg">
+                  <img src="assets/trades-history-2.jpg" alt="Trade Historie 2">
+                </div>
+              </div>
+            </div>
+
+            <div class="note">Tipp: Wenn du noch mehr Screenshots hast, kann ich dir die Sektion erweitern.</div>
+          </div>
+
+          <div class="card">
+            <h3>Broker Account</h3>
+            <p>Eröffne deinen Trading Account und starte Copytrading.</p>
+            <a class="btn" target="_blank" href="PU_PRIME_LINK_HIER_EINTRAGEN">PU Prime Account eröffnen</a>
+            <div class="note">Hier muss dein echter PU Prime Link rein.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="cta">
+          <div class="left">
+            <div class="t">Bereit für den Start?</div>
+            <div class="d">Schreib mir auf Telegram, dann bekommst du die Schritt-für-Schritt Anleitung und wir verbinden dein Copytrading.</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn secondary" target="_blank" href="https://t.me/TommY">Telegram schreiben</a>
+            <a class="btn" target="_blank" href="PU_PRIME_LINK_HIER_EINTRAGEN">Account eröffnen</a>
+          </div>
+        </div>
+
+        <div class="footer">
+          Risiko-Hinweis: Trading kann zu Verlusten führen. Vergangene Ergebnisse sind keine Garantie für zukünftige Resultate.
+          <br>
+          © TommyZeigt Copytrading
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <div class="x" id="lbClose">✕</div>
+    <img id="lbImg" alt="Vorschau">
+  </div>
+
+  <script>
+    const PU_LINK = "PU_PRIME_LINK_HIER_EINTRAGEN";
+    document.querySelectorAll('a[href="PU_PRIME_LINK_HIER_EINTRAGEN"]').forEach(a => a.href = PU_LINK);
+
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ""; };
+
+    document.querySelectorAll('.thumb').forEach(t => {
+      t.addEventListener('click', () => {
+        const src = t.getAttribute('data-img');
+        lbImg.src = src;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', close);
+    lb.addEventListener('click', (e) => { if(e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => { if(e.key === "Escape") close(); });
+  </script>
 </body>
 </html>
