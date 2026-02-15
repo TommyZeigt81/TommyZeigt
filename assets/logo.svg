@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140">
-<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f6d36b"/><stop offset="1" stop-color="#b8891a"/></linearGradient></defs>
-<rect width="420" height="140" rx="26" fill="#0b0b10"/>
-<path d="M75 38h46l-32 38h34v26H65l34-38H75z" fill="url(#g)"/>
-<text x="145" y="66" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f2f2f2">TommyZeigt</text>
-<text x="145" y="98" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#c9c9d6">Copytrading</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+<defs>
+<linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+  <stop offset="0" stop-color="#ffda66"/>
+  <stop offset="1" stop-color="#f2c94c"/>
+</linearGradient>
+</defs>
+<rect x="18" y="18" width="220" height="220" rx="48" fill="url(#g)"/>
+<path d="M78 78h100l-74 74h74v26H78l74-74H78z" fill="#0a0c10" opacity=".92"/>
 </svg>

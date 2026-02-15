@@ -1,7 +1,260 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bewerbung • TommyZeigt</title>
-<meta http-equiv="refresh" content="0; url=index.html">
-<link rel="icon" href="assets/favicon.svg" /></head><body style="margin:0;background:#05070a;color:#eef2fb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;">
-<div style="max-width:860px;margin:0 auto;padding:48px 18px;">
-<div style="border:1px solid rgba(255,255,255,.10);border-radius:22px;background:rgba(255,255,255,.04);padding:18px;">
-Bewerbung lädt… <a href="index.html" style="color:#ffda66;text-decoration:none">zur Startseite</a>
-</div></div></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bewerbung – TommyZeigt Copytrading</title>
+  <meta name="description" content="Bewerbung für TommyZeigt Copytrading. Einstieg ab 500€. Seriöser Auswahlprozess."/>
+  <link rel="icon" href="assets/favicon.svg"/>
+  <meta name="theme-color" content="#05070a"/>
+  <style>
+:root{
+  --bg0:#05070a; --bg1:#0b0d12; --card:#0f131b; --text:#e9edf5; --muted:#a7b0c2;
+  --gold:#f2c94c; --gold2:#ffda66; --line:rgba(242,201,76,.22);
+  --shadow:0 18px 55px rgba(0,0,0,.55); --radius:20px; --max:1160px;
+  --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:var(--font); color:var(--text);
+  background:
+    radial-gradient(900px 600px at 10% 0%, rgba(242,201,76,.10), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(120,170,255,.10), transparent 60%),
+    radial-gradient(700px 520px at 50% 100%, rgba(242,201,76,.08), transparent 65%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+a{color:inherit; text-decoration:none}
+.container{max-width:var(--max); margin:0 auto; padding:0 22px}
+.nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(14px);
+  background: rgba(5,7,10,.72);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px}
+.brand{display:flex; align-items:center; gap:10px; min-width:240px}
+.logo{width:34px; height:34px; border-radius:12px; display:block}
+.brand-text{display:flex; flex-direction:column; line-height:1.1}
+.brand-text .top{font-weight:900; letter-spacing:.2px}
+.brand-text .sub{font-size:12px; color:var(--muted)}
+.links{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:center}
+.links a{font-size:14px; color:var(--muted); padding:8px 10px; border-radius:12px}
+.links a:hover{color:var(--text); background:rgba(255,255,255,.04)}
+.cta{display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:240px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:11px 14px; border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:var(--text); font-weight:800; font-size:14px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+.btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14)}
+.btn-gold{
+  background: linear-gradient(145deg, var(--gold2), var(--gold));
+  color:#0a0c10; border:0;
+  box-shadow: 0 16px 35px rgba(242,201,76,.20);
+}
+.btn-gold:hover{box-shadow: 0 18px 45px rgba(242,201,76,.28)}
+.hero{padding:64px 0 26px}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:stretch}
+.kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 12px; border-radius:999px;
+  border:1px solid rgba(242,201,76,.22);
+  background:rgba(242,201,76,.08); color:var(--gold2); font-size:13px;
+}
+.h1{margin:16px 0 10px; font-size:50px; line-height:1.05; letter-spacing:-.8px; font-weight:950}
+.grad{background: linear-gradient(90deg, #ffffff, #ffe9a6 40%, #f2c94c); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lead{color:var(--muted); font-size:16px; line-height:1.7; margin:0 0 18px; max-width:60ch}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 12px}
+.badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.badge{font-size:13px; color:var(--muted); padding:8px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+.card{background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+.hero-card{padding:18px; position:relative; overflow:hidden; min-height:330px}
+.hero-card:before{
+  content:""; position:absolute; inset:-120px -140px auto auto;
+  width:340px; height:340px;
+  background: radial-gradient(circle at 30% 30%, rgba(242,201,76,.28), transparent 60%);
+  filter: blur(2px);
+}
+.hero-card h3{margin:4px 0 8px; font-size:18px}
+.mini{color:var(--muted); font-size:13px; line-height:1.6}
+.stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px}
+.stat{padding:14px; border-radius:16px; background: rgba(10,12,16,.55); border:1px solid rgba(255,255,255,.08)}
+.stat .v{font-size:18px; font-weight:900}
+.stat .k{font-size:12px; color:var(--muted); margin-top:4px}
+.sep{height:1px; background: rgba(255,255,255,.07); margin:14px 0}
+.note{font-size:12px; color:rgba(233,237,245,.72); line-height:1.5}
+
+.section{padding:44px 0}
+.section h2{margin:0 0 10px; font-size:30px; letter-spacing:-.4px; font-weight:950}
+.section p.top{margin:0 0 18px; color:var(--muted); line-height:1.7}
+.grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+.feature{
+  padding:18px; border-radius:var(--radius);
+  background: rgba(10,12,16,.55);
+  border: 1px solid rgba(255,255,255,.08);
+  position:relative; overflow:hidden;
+}
+.feature:before{
+  content:""; position:absolute; inset:auto auto -180px -160px;
+  width:340px; height:340px;
+  background: radial-gradient(circle at 60% 35%, rgba(242,201,76,.22), transparent 60%);
+}
+.icon{
+  width:44px; height:44px; border-radius:16px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(242,201,76,.10);
+  border:1px solid rgba(242,201,76,.22);
+  color: var(--gold2); font-weight:950;
+}
+.feature h3{margin:12px 0 8px; font-size:17px}
+.feature p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+
+.split{display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:stretch}
+.panel{padding:20px; border-radius:var(--radius); background: rgba(10,12,16,.55); border:1px solid rgba(255,255,255,.08)}
+.steps{display:grid; gap:12px}
+.step{display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:16px; background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08)}
+.num{width:34px; height:34px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  background: rgba(242,201,76,.12); border:1px solid rgba(242,201,76,.22); color: var(--gold2); font-weight:950; flex:0 0 auto}
+.step b{display:block; font-size:14px; margin-bottom:3px}
+.step span{display:block; color:var(--muted); font-size:13px; line-height:1.55}
+
+.pricing{display:grid; grid-template-columns:repeat(5, 1fr); gap:12px}
+.tier{padding:16px; border-radius:18px; background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.09); position:relative; overflow:hidden}
+.tier:before{content:""; position:absolute; inset:auto auto -200px -160px; width:360px; height:360px; background: radial-gradient(circle at 60% 35%, rgba(242,201,76,.18), transparent 60%)}
+.tier .name{font-weight:950; letter-spacing:.2px}
+.tier .amt{margin-top:8px; font-size:20px; font-weight:950}
+.tier .desc{margin-top:8px; color:var(--muted); font-size:13px; line-height:1.55}
+.tier .tag{display:inline-flex; margin-top:10px; font-size:12px; padding:7px 9px; border-radius:999px; border:1px solid rgba(242,201,76,.22); background: rgba(242,201,76,.08); color:var(--gold2)}
+.tier.featured{border-color: rgba(242,201,76,.30); background: rgba(242,201,76,.06)}
+
+.proof-wrap{display:grid; grid-template-columns:1fr; gap:14px}
+.widget{width:100%; min-height:520px; border:1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); border-radius:18px; overflow:hidden}
+.widget iframe{width:100%; height:520px; border:0}
+
+.form{display:grid; gap:10px}
+.input{width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); color:var(--text); outline:none}
+textarea.input{min-height:120px; resize:vertical}
+.small{font-size:12px; color:rgba(233,237,245,.68); line-height:1.5}
+
+.footer{padding:26px 0 40px; border-top:1px solid rgba(255,255,255,.07); color:rgba(233,237,245,.70); font-size:12px}
+
+.toast{position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background: rgba(10,12,16,.85);
+  border:1px solid rgba(255,255,255,.10); color: var(--text); padding:12px 14px; border-radius:14px; box-shadow: var(--shadow); display:none;
+  max-width:min(720px, calc(100% - 28px))}
+.toast.show{display:block; animation: pop .18s ease}
+@keyframes pop{from{transform:translateX(-50%) translateY(6px); opacity:.0} to{transform:translateX(-50%) translateY(0); opacity:1}}
+
+.tz-support-fab{
+  position: fixed; right: 18px; bottom: 18px; z-index: 9999;
+  width: 56px; height: 56px; border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(145deg, rgba(242,201,76,.18), rgba(242,201,76,.08));
+  color: #e9edf5; font-size: 22px; cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, filter .12s ease;
+}
+.tz-support-fab:hover{ transform: translateY(-1px); filter: brightness(1.08); }
+
+.tz-chat{
+  position: fixed; right: 18px; bottom: 86px; z-index: 10000;
+  width: min(380px, calc(100vw - 36px));
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(10,12,16,.92);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: none;
+}
+.tz-chat.show{ display:block; animation: tzPop .18s ease; }
+@keyframes tzPop{ from{ transform: translateY(8px); opacity:.0 } to{ transform: translateY(0); opacity:1 } }
+
+.tz-chat-head{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px; border-bottom: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03)}
+.tz-chat-title{font-weight:950; letter-spacing:.2px}
+.tz-chat-close{padding:7px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); color: rgba(233,237,245,.92); font-weight:950; cursor:pointer}
+.tz-chat-body{padding:12px; height:160px; overflow:auto}
+.tz-bubble{max-width:90%; padding:10px 12px; border-radius:16px; margin:0 0 10px; border:1px solid rgba(255,255,255,.10); font-size:13px; line-height:1.5}
+.tz-bubble-bot{background: rgba(242,201,76,.08); border-color: rgba(242,201,76,.18); color: rgba(233,237,245,.92)}
+.tz-bubble-user{margin-left:auto; background: rgba(255,255,255,.04); color: rgba(233,237,245,.88)}
+.tz-chat-form{padding:12px; display:grid; gap:8px; border-top: 1px solid rgba(255,255,255,.08)}
+.tz-chat-input{width:100%; padding:10px 10px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); color: rgba(233,237,245,.92); outline:none; font-size:13px}
+.tz-chat-textarea{min-height:84px; resize:vertical}
+.tz-chat-send{padding:11px 12px; border-radius:14px; border:0; background: linear-gradient(145deg, rgba(255,218,102,.95), rgba(242,201,76,.85)); color:#0a0c10; font-weight:950; cursor:pointer}
+.tz-chat-small{font-size:12px; color: rgba(233,237,245,.68); line-height:1.45}
+
+@media (max-width: 1080px){ .pricing{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 980px){ .hero-grid, .split{grid-template-columns:1fr} .h1{font-size:40px} .cta{min-width:auto} .brand{min-width:auto} }
+@media (max-width: 760px){ .grid3{grid-template-columns:1fr} .links{display:none} .pricing{grid-template-columns:1fr} .widget iframe{height:640px} }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img class="logo" src="assets/logo.svg" alt="TommyZeigt Logo" width="34" height="34"/>
+        <div class="brand-text">
+          <div class="top">TommyZeigt</div>
+          <div class="sub">Bewerbung • Copytrading</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="index.html">Startseite</a>
+        <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-top:44px">
+      <div class="container split">
+        <div class="panel">
+          <h2>Bewerbung</h2>
+          <p class="top">Zugang nur nach Prüfung. Bitte ehrlich ausfüllen – das spart Zeit und macht das Setup sauber.</p>
+
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><b>Kapital ab 500€</b><span>Wir starten erst, wenn das Setup realistisch ist.</span></div></div>
+            <div class="step"><div class="num">2</div><div><b>Risikoprofil</b><span>Konservativ / gemischt / aggressiv – passend zu deinem Ziel.</span></div></div>
+            <div class="step"><div class="num">3</div><div><b>Kontakt</b><span>Antwort kommt per E-Mail. Kein Telegram nötig.</span></div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Formular</h2>
+          <p class="top">Nach Absenden erhältst du eine Bestätigung von Formspree. Wir antworten per E-Mail.</p>
+
+          <form class="form" action="https://formspree.io/f/mkovrqqq" method="POST">
+            <input class="input" type="hidden" name="form" value="Bewerbung"/>
+            <input class="input" type="text" name="name" placeholder="Name" required />
+            <input class="input" type="email" name="email" placeholder="E-Mail" required />
+            <input class="input" type="text" name="capital" placeholder="Kapital (z.B. 1000€)" required />
+            <input class="input" type="text" name="experience" placeholder="Erfahrung (z.B. Anfänger / Fortgeschritten)" />
+            <input class="input" type="text" name="risk" placeholder="Risikoprofil (konservativ / gemischt / aggressiv)" required />
+            <textarea class="input" name="message" placeholder="Kurz dein Ziel + wie viel Zeit du investieren willst" required></textarea>
+
+            <button class="btn btn-gold" type="submit">Bewerbung absenden</button>
+            <div class="small">Mit dem Absenden akzeptierst du, dass du kontaktiert wirst. Keine Weitergabe an Dritte.</div>
+          </form>
+
+          <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap">
+            <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook prüfen</a>
+            <a class="btn" href="index.html#ablauf">Ablauf ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container">
+        <div>© <span id="y"></span> TommyZeigt Copytrading</div>
+        <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
