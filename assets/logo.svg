@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="70" viewBox="0 0 220 70">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#f6d36b"/><stop offset="1" stop-color="#b8891a"/></linearGradient></defs>
-<rect width="220" height="70" rx="16" fill="#0b0b10" stroke="rgba(255,255,255,.10)"/>
-<path d="M34 18h40l-30 34h30" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="92" y="42" font-family="Arial, sans-serif" font-size="18" fill="#f2f2f2" font-weight="700">TommyZeigt</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f6d36b"/><stop offset="1" stop-color="#b8891a"/></linearGradient></defs>
+<rect width="420" height="140" rx="26" fill="#0b0b10"/>
+<path d="M75 38h46l-32 38h34v26H65l34-38H75z" fill="url(#g)"/>
+<text x="145" y="66" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f2f2f2">TommyZeigt</text>
+<text x="145" y="98" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#c9c9d6">Copytrading</text>
 </svg>

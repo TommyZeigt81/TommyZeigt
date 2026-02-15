@@ -4,20 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TommyZeigt Copytrading</title>
-  <meta name="description" content="Telegram zuerst. PU Prime als zweiter Schritt. Live Widgets + Letzte Trades + Proof." />
+  <meta name="description" content="Lead Generator für TommyZeigt Copytrading: Telegram + verifizierte Performance + Setup Anfrage." />
   <meta name="theme-color" content="#0b0b10" />
+  <meta property="og:title" content="TommyZeigt Copytrading" />
+  <meta property="og:description" content="Professionelles Copytrading mit verifizierter Live Performance. Setup in Minuten." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
   <link rel="icon" href="assets/logo.svg" />
+
+  <!-- Speed -->
   <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml" />
   <style>
     :root{
       --bg:#07070a; --bg2:#0b0b10;
-      --text:#f2f2f2; --muted:rgba(242,242,242,.72);
+      --text:#f2f2f2; --muted:#c9c9d6;
       --gold1:#f6d36b; --gold2:#b8891a;
       --blue1:#66d3ff;
-      --line:rgba(255,255,255,.10);
-      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
       --r:18px; --r2:26px;
-      --max:1120px;
+      --max:1120px; --navH:76px;
+      --line:rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -34,24 +40,30 @@
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .anchor{scroll-margin-top: calc(var(--navH) + 18px)}
+
     .topbar{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,7,10,.72);
+      background: rgba(7,7,10,.70);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .nav{height:76px; display:flex; align-items:center; justify-content:space-between; gap:12px}
-    .brand{display:flex; align-items:center; gap:12px}
+    .nav{height:var(--navH); display:flex; align-items:center; justify-content:space-between; gap:14px}
+    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
     .brand img{height:44px; width:auto}
     .menu{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center}
-    .menu a{font-size:13px; color:rgba(242,242,242,.86); padding:10px 10px; border-radius:12px; border:1px solid transparent}
+    .menu a{
+      font-size:13px; color:rgba(242,242,242,.86);
+      padding:10px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
     .menu a:hover{border-color: rgba(246,211,107,.28); background: rgba(246,211,107,.06)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; min-width: 340px}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.04);
       color:var(--text);
       font-weight:800; font-size:13px;
@@ -62,9 +74,27 @@
     .btn:active{transform: translateY(0)}
     .btn-gold{border-color: rgba(246,211,107,.40); background: linear-gradient(135deg, rgba(246,211,107,.18), rgba(184,137,26,.10));}
     .btn-telegram{border-color: rgba(102,211,255,.40); background: linear-gradient(135deg, rgba(102,211,255,.20), rgba(0,0,0,.10));}
+    .btn svg{width:18px; height:18px}
+    .btn small{font-weight:800; color:rgba(242,242,242,.70)}
 
-    header{padding:54px 0 20px}
-    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px; align-items:stretch}
+    header.hero{padding:54px 0 22px; position:relative}
+    header.hero::before{
+      content:"";
+      position:absolute; inset:-160px -120px auto -120px;
+      height: 620px;
+      background: url("assets/bg-grid.svg") center/cover no-repeat;
+      opacity:.26;
+      pointer-events:none;
+    }
+    header.hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background: url("assets/noise.svg") center/240px 240px repeat;
+      opacity:.12;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch; position:relative}
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.08);
@@ -81,47 +111,73 @@
       background: rgba(246,211,107,.06);
       padding:8px 12px; border-radius:999px;
     }
-    h1{margin:14px 0 10px; font-size: clamp(30px, 4vw, 46px); line-height:1.06; letter-spacing:.02em}
-    .lead{margin:0 0 16px; color:rgba(242,242,242,.82); font-size:15px; line-height:1.65; max-width:62ch}
-    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
-    .chip{display:inline-flex; gap:10px; align-items:center; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background: rgba(0,0,0,.18); color: rgba(242,242,242,.82); font-size:13px}
-    .dot{width:10px; height:10px; border-radius:999px; background: linear-gradient(135deg, var(--gold1), var(--gold2)); box-shadow: 0 0 0 6px rgba(246,211,107,.10)}
+    h1{margin:14px 0 10px; font-size: clamp(32px, 4.3vw, 48px); line-height:1.05; letter-spacing:.02em}
+    .lead{margin:0 0 14px; color:rgba(242,242,242,.82); font-size:15px; line-height:1.65; max-width:62ch}
+    .trustline{margin:0; color:rgba(242,242,242,.70); font-size:13px; line-height:1.6}
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
+    .chip{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+      color: rgba(242,242,242,.82);
+      font-size:13px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--gold1), var(--gold2));
+      box-shadow: 0 0 0 6px rgba(246,211,107,.10);
+    }
 
     section{padding:26px 0}
-    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px}
-    .sectionTitle h2{margin:0; font-size:22px}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+    .sectionTitle h2{margin:0; font-size:24px; letter-spacing:.02em}
     .sectionTitle p{margin:0; color:rgba(242,242,242,.70); font-size:13px}
 
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+
     .box{background: rgba(0,0,0,.20); border:1px solid rgba(255,255,255,.08); border-radius: var(--r); padding:16px}
     .box h3{margin:0 0 8px; font-size:16px}
     .box p{margin:0; color:rgba(242,242,242,.76); line-height:1.6; font-size:13px}
 
-    .tableWrap{overflow:auto; border-radius:18px; border:1px solid rgba(255,255,255,.08)}
-    table{width:100%; border-collapse:collapse; min-width:620px; background: rgba(0,0,0,.22)}
-    th,td{padding:12px 12px; border-bottom:1px solid rgba(255,255,255,.06); font-size:13px; text-align:left}
-    th{color:rgba(242,242,242,.72); font-weight:900}
-    .pos{color: rgba(102,211,255,.95); font-weight:900}
-    .neg{color: rgba(246,211,107,.95); font-weight:900}
+    .tableWrap{border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden; background: rgba(0,0,0,.18)}
+    table{width:100%; border-collapse:collapse; font-size:13px}
+    th, td{padding:12px 12px; border-bottom:1px solid rgba(255,255,255,.07); text-align:left}
+    th{color:rgba(242,242,242,.72); font-weight:800; background: rgba(255,255,255,.03)}
+    tr:last-child td{border-bottom:0}
+    .pnlPos{color: rgba(246,211,107,.95); font-weight:900}
+    .pnlNeg{color: rgba(255,120,120,.92); font-weight:900}
 
-    .mediaGrid{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-    .shot{border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#0f0f16}
-    .shot img{width:100%; height:320px; object-fit:cover}
-    .note{margin-top:10px; color:rgba(242,242,242,.64); font-size:12px; line-height:1.6}
+    .field{width:100%; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.20); color:var(--text); padding:12px 12px; outline:none; font-size:13px}
+    textarea.field{min-height:120px; resize:vertical}
+    .small{color:rgba(242,242,242,.62); font-size:12px; line-height:1.55; margin-top:10px}
 
-    .embed{border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#0f0f16}
-    .embed iframe{width:100%; height:520px; border:0; display:block}
+    .floating{position:fixed; right:16px; bottom:16px; z-index:60; display:flex; flex-direction:column; gap:10px}
+    .fab{width:54px; height:54px; border-radius:16px; display:grid; place-items:center; border:1px solid rgba(102,211,255,.40); background: linear-gradient(135deg, rgba(102,211,255,.22), rgba(0,0,0,.10)); box-shadow: var(--shadow)}
+    .fab span{font-size:20px}
 
-    footer{padding:24px 0 60px; border-top:1px solid rgba(255,255,255,.06); color:rgba(242,242,242,.60); font-size:12px}
+    .bottomBar{
+      position:fixed; left:0; right:0; bottom:0; z-index:55;
+      padding:10px 12px;
+      background: rgba(7,7,10,.78);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.06);
+      display:none;
+    }
+    .bottomBar .row{display:flex; gap:10px}
+    .bottomBar a{flex:1}
+
+    footer{padding:24px 0 78px; border-top:1px solid rgba(255,255,255,.06); color:rgba(242,242,242,.60); font-size:12px}
 
     @media (max-width: 980px){
-      .hero{grid-template-columns:1fr}
+      .heroGrid{grid-template-columns:1fr}
       .menu{display:none}
       .grid2{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
-      .mediaGrid{grid-template-columns:1fr}
-      .embed iframe{height:520px}
+      .bottomBar{display:block}
     }
   </style>
 </head>
@@ -131,231 +187,272 @@
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#start">
-          <img src="assets/logo.svg" alt="TommyZeigt" width="220" height="70" decoding="async" />
+          <img src="assets/logo.svg" alt="TommyZeigt Copytrading" />
         </a>
+
         <nav class="menu" aria-label="Navigation">
-          <a href="#live">Live</a>
-          <a href="#trades">Letzte Trades</a>
-          <a href="#proof">Proof</a>
+          <a href="#ergebnisse">Ergebnisse</a>
+          <a href="#vorteile">Vorteile</a>
+          <a href="#starten">Start</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
+
         <div class="cta">
-          <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram @TommY</a>
-          <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime starten</a>
+          <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram <small>@TommY</small></a>
+          <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime Konto</a>
         </div>
       </div>
     </div>
   </div>
 
-  <main id="start">
-    <header>
-      <div class="wrap hero">
+  <main id="start" class="anchor">
+    <header class="hero">
+      <div class="wrap heroGrid">
         <section class="card">
           <div class="pad">
-            <div class="kicker">Telegram zuerst · Broker optional</div>
-            <h1>Copy meine Trades. Ohne Stress.</h1>
-            <p class="lead">Du willst Ergebnisse sehen, aber keine Zeit für Charts? Dann kopiere meine Trades automatisch und erhalte Support direkt über Telegram.</p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram Support</a>
-              <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">Account eröffnen</a>
-              <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook Proof</a>
+            <div class="kicker">Lead Generator · High Conversion</div>
+            <h1>Professionelles Copytrading mit verifizierter Live Performance</h1>
+            <p class="lead">
+              Verbinde dein Trading Konto und kopiere Echtgeld-Trades automatisch in Echtzeit.
+              Kein Stress, keine manuelle Analyse, klarer Prozess.
+            </p>
+            <p class="trustline">Öffentlich dokumentierte Performance · Volle Transparenz · Kontrolliertes Risiko</p>
+
+            <div class="heroActions">
+              <a class="btn btn-telegram" href="#kontakt">Setup Anfrage senden</a>
+              <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime Konto eröffnen</a>
+              <a class="btn" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Live Ergebnisse</a>
             </div>
+
             <div class="chips">
-              <div class="chip"><span class="dot"></span> Zeit sparen</div>
-              <div class="chip"><span class="dot"></span> Risiko im Blick</div>
-              <div class="chip"><span class="dot"></span> Fokus XAUUSD</div>
+              <div class="chip"><span class="dot"></span> Telegram Support</div>
+              <div class="chip"><span class="dot"></span> Gold Fokus (XAUUSD)</div>
+              <div class="chip"><span class="dot"></span> Verifizierte Historie</div>
             </div>
-            <div class="note">Risiko Hinweis: Trading kann zu Verlusten führen. Ergebnisse aus der Vergangenheit sind keine Garantie.</div>
+
+            <div class="small">Risiko Hinweis: Trading kann zu Verlusten führen. Ergebnisse aus der Vergangenheit sind keine Garantie.</div>
           </div>
         </section>
 
         <aside class="card">
           <div class="pad">
-            <div class="sectionTitle" style="margin-bottom:8px">
-              <h2 style="font-size:18px">Schnellstart</h2>
-              <p>in 3 Schritten</p>
+            <div class="sectionTitle" style="margin:0 0 10px">
+              <h2 style="font-size:18px">Letzte Trades automatisch</h2>
+              <p>lädt aus assets/trades.json</p>
             </div>
-            <div class="box" style="margin-bottom:10px">
-              <h3>1 Telegram</h3>
-              <p>Schreib „Start“ an @TommY, du bekommst Setup + Regeln.</p>
+
+            <div class="tableWrap">
+              <table aria-label="Letzte Trades">
+                <thead>
+                  <tr>
+                    <th>Zeit</th>
+                    <th>Symbol</th>
+                    <th>Richtung</th>
+                    <th>PnL</th>
+                  </tr>
+                </thead>
+                <tbody id="tradesBody">
+                  <tr><td colspan="4">lädt…</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="box" style="margin-bottom:10px">
-              <h3>2 Konto + Copy</h3>
-              <p>PU Prime Konto eröffnen, verbinden, Risiko einstellen.</p>
-            </div>
+
+            <div style="height:14px"></div>
             <div class="box">
-              <h3>3 Trades laufen</h3>
-              <p>Du kopierst automatisch – auch wenn du nicht am PC bist.</p>
+              <h3>Live Tracking</h3>
+              <p>Performance ist öffentlich einsehbar. Öffne Myfxbook im neuen Tab.</p>
+              <div style="margin-top:12px">
+                <a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook öffnen</a>
+              </div>
             </div>
           </div>
         </aside>
       </div>
     </header>
 
-    <section id="live">
+    <section id="ergebnisse" class="anchor">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Live Widgets</h2>
-          <p>Charts & Preise in Echtzeit</p>
-        </div>
-
-        <div class="card">
-          <div class="pad">
-            <div class="note" style="margin-top:0">Wenn etwas nicht lädt: AdBlock kurz deaktivieren oder im privaten Fenster testen.</div>
-            <div class="embed" style="margin-top:12px">
-              <iframe
-                title="TradingView XAUUSD"
-                src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=60&hidesidetoolbar=1&saveimage=0&theme=dark&style=1&timezone=Europe%2FBerlin&withdateranges=1&hideideas=1"
-                loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="trades">
-      <div class="wrap">
-        <div class="sectionTitle">
-          <h2>Letzte Trades</h2>
-          <p>automatisch aus einer Datei geladen</p>
-        </div>
-
-        <div class="card">
-          <div class="pad">
-            <div class="note" style="margin-top:0">Ich lade Trades aus assets/trades.json. Du kannst diese Datei jederzeit ersetzen, dann aktualisiert sich die Tabelle automatisch.</div>
-            <div class="tableWrap" style="margin-top:12px">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Zeit</th><th>Symbol</th><th>Richtung</th><th>Ergebnis</th><th>Notiz</th>
-                  </tr>
-                </thead>
-                <tbody id="tradeRows">
-                  <tr><td colspan="5">Lade Trades…</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note" id="tradeUpdated"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof">
-      <div class="wrap">
-        <div class="sectionTitle">
-          <h2>Proof</h2>
-          <p>Transparenz & Historie</p>
+          <h2>Verifizierte Ergebnisse</h2>
+          <p>Transparenz statt Versprechen</p>
         </div>
 
         <div class="grid2">
-          <div class="card">
-            <div class="pad">
-              <h3 style="margin:0 0 8px">Myfxbook Live</h3>
-              <p style="margin:0; color:rgba(242,242,242,.76); line-height:1.6">Öffentliches Portfolio mit Historie.</p>
-              <div style="margin-top:12px">
-                <a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Performance ansehen</a>
-              </div>
-              <div class="note">Einbettungen werden oft blockiert – Button ist am sichersten.</div>
+          <div class="box">
+            <h3>Live Performance</h3>
+            <p>Öffentlich dokumentierte Historie über Myfxbook. Jeder kann nachprüfen, was passiert.</p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Live Ergebnisse ansehen</a>
+              <a class="btn" href="#kontakt">Setup Anfrage</a>
             </div>
           </div>
 
-          <div class="card">
-            <div class="pad">
-              <h3 style="margin:0 0 8px">Trade Historie</h3>
-              <p style="margin:0; color:rgba(242,242,242,.76); line-height:1.6">Screenshots als Zusatz-Proof.</p>
-              <div class="mediaGrid" style="margin-top:12px">
-                <a class="shot" href="assets/history-1.jpg" target="_blank" rel="noopener">
-                  <img src="assets/history-1.jpg" alt="Historie 1" loading="lazy" decoding="async" width="1200" height="800">
-                </a>
-                <a class="shot" href="assets/history-2.jpg" target="_blank" rel="noopener">
-                  <img src="assets/history-2.jpg" alt="Historie 2" loading="lazy" decoding="async" width="1200" height="800">
-                </a>
-              </div>
-              <div class="note">Klick zum Zoomen. Das ist stark in Kombination mit Myfxbook.</div>
+          <div class="box">
+            <h3>Gold Livechart (XAUUSD)</h3>
+            <p>Direkt auf der Seite, ohne schwere Skripte. Wenn es blockiert: Adblock kurz deaktivieren.</p>
+            <div style="margin-top:12px" class="tableWrap">
+              <iframe
+                title="TradingView XAUUSD"
+                src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=60&hidesidetoolbar=1&saveimage=0&theme=dark&style=1&timezone=Europe%2FBerlin&withdateranges=1&hideideas=1"
+                loading="lazy"
+                style="width:100%; height:360px; border:0; display:block"></iframe>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="kontakt">
+    <section id="vorteile" class="anchor">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Kontakt</h2>
-          <p>Telegram ist der schnellste Weg</p>
+          <h2>Warum dieses System funktioniert</h2>
+          <p>klarer Prozess, klare Regeln</p>
         </div>
 
-        <div class="card">
-          <div class="pad">
-            <div class="grid2">
-              <div class="box">
-                <h3>Telegram</h3>
-                <p>Schreib „Start“ an @TommY – dann bekommst du Setup + Ablauf.</p>
-                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-                  <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram öffnen</a>
-                  <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime Konto</a>
-                </div>
-              </div>
-              <div class="box">
-                <h3>Quick Message</h3>
-                <p>Ein Klick – Text kopieren und in Telegram einfügen.</p>
-                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-                  <button class="btn" type="button" onclick="copyStart()">Text kopieren</button>
-                  <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">In Telegram senden</a>
-                </div>
-                <div class="note" id="copyOk" style="display:none">Kopiert ✅</div>
-              </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>Automatisch</h3>
+            <p>Dein Konto kopiert Trades automatisch. Du musst nicht den ganzen Tag am Chart sitzen.</p>
+          </div>
+          <div class="box">
+            <h3>Risikokontrolle</h3>
+            <p>Positionsgrößen und Risiko werden sauber eingestellt. Kontrolle schlägt Emotionen.</p>
+          </div>
+          <div class="box">
+            <h3>Transparenz</h3>
+            <p>Live Performance und Historie sind öffentlich. Keine Demo, kein Fake, echte Daten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="starten" class="anchor">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>So startest du in wenigen Minuten</h2>
+          <p>Telegram zuerst, Broker als Schritt 2</p>
+        </div>
+
+        <div class="grid2">
+          <div class="box">
+            <h3>Schritt 1</h3>
+            <p>Schreib „Start“ an Telegram @TommY und du bekommst Setup + Ablauf.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram öffnen</a>
+            </div>
+          </div>
+          <div class="box">
+            <h3>Schritt 2</h3>
+            <p>PU Prime Konto eröffnen und verbinden. Danach läuft Copytrading automatisch.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime Konto eröffnen</a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section id="kontakt" class="anchor">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Setup Anfrage</h2>
+          <p>Lead System: Formular → Thank You Page</p>
+        </div>
+
+        <div class="grid2">
+          <div class="box">
+            <h3>Direkter Kontakt</h3>
+            <p>Wenn du es schnell willst: Schreib mir auf Telegram „Start“.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram: @TommY</a>
+            </div>
+            <div class="small">Du kannst zusätzlich das Formular nutzen, damit ich dich zuverlässig zurückkontaktiere.</div>
+          </div>
+
+          <div class="box">
+            <h3>Formular</h3>
+
+            <!-- Lead System: Formspree -->
+            <form id="leadForm" method="POST" action="https://formspree.io/f/mkovrqqq" novalidate>
+              <input class="field" name="name" placeholder="Name" required />
+              <div style="height:10px"></div>
+              <input class="field" name="email" type="email" placeholder="E-Mail" required />
+              <div style="height:10px"></div>
+              <input class="field" name="telegram" placeholder="Telegram Username (optional)" />
+              <div style="height:10px"></div>
+              <textarea class="field" name="message" placeholder="Worum geht’s? Konto / Setup / Fragen ..." required></textarea>
+
+              <input type="hidden" name="_subject" value="Neue Setup Anfrage – TommyZeigt Copytrading" />
+              <input type="hidden" name="_redirect" value="thankyou.html" />
+
+              <div style="height:12px"></div>
+              <button class="btn btn-gold" type="submit">Anfrage senden</button>
+
+              <div class="small">
+                Hinweis: In index.html oben bei action musst du DEINFORMID eintragen (Formspree).
+                Alternativ: Telegram nutzen.
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="small" style="margin-top:14px">
+          Datenschutz: <a href="privacy.html" style="text-decoration:underline">privacy.html</a>
+        </div>
       </div>
     </section>
 
     <footer>
       <div class="wrap">
-        © <span id="y"></span> TommyZeigt Copytrading · Risiko Hinweis gilt immer
+        <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center">
+          <div>© <span id="y"></span> TommyZeigt Copytrading</div>
+          <div style="opacity:.85"><a href="privacy.html" style="text-decoration:underline">Datenschutz</a></div>
+        </div>
       </div>
     </footer>
   </main>
 
-  <script defer>
+  <div class="floating">
+    <a class="fab" href="https://t.me/TommY" target="_blank" rel="noopener" aria-label="Telegram öffnen"><span>✈️</span></a>
+  </div>
+
+  <div class="bottomBar" aria-label="Schnellaktionen">
+    <div class="row">
+      <a class="btn btn-telegram" href="https://t.me/TommY" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime</a>
+    </div>
+  </div>
+
+  <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    function copyStart(){
-      const text = "Hi Tommy, ich möchte mit Copytrading starten. Bitte schick mir die Setup-Schritte.";
-      navigator.clipboard.writeText(text).then(()=>{
-        const el = document.getElementById('copyOk');
-        el.style.display = 'block';
-        setTimeout(()=> el.style.display='none', 2200);
-      });
-    }
-
-    async function loadTrades(){
-      try{
-        const res = await fetch('assets/trades.json', {cache:'no-cache'});
+    // Auto Trades from JSON
+    (async function(){
+      try {
+        const res = await fetch('assets/trades.json', {cache:'no-store'});
         const data = await res.json();
-        const rows = (data.items || []).slice(0, 20).map(t => {
-          const s = (''+t.result).trim();
-          const isPos = s.startswith ? s.startswith('+') : s[0] === '+';
-          const cls = s[0] === '+' ? 'pos' : (s[0] === '-' ? 'neg' : '');
-          return `<tr>
+        const body = document.getElementById('tradesBody');
+        body.innerHTML = '';
+        data.slice(0, 8).forEach(t => {
+          const tr = document.createElement('tr');
+          const pnl = Number(t.pnl || 0);
+          const cls = pnl >= 0 ? 'pnlPos' : 'pnlNeg';
+          tr.innerHTML = `
             <td>${t.time || ''}</td>
             <td>${t.symbol || ''}</td>
             <td>${t.side || ''}</td>
-            <td class="${cls}">${t.result || ''}</td>
-            <td>${t.notes || ''}</td>
-          </tr>`;
-        }).join('');
-        document.getElementById('tradeRows').innerHTML = rows || '<tr><td colspan="5">Noch keine Trades.</td></tr>';
-        document.getElementById('tradeUpdated').textContent = data.updated ? ('Letztes Update: ' + data.updated) : '';
+            <td class="${cls}">${pnl.toFixed(2)}</td>
+          `;
+          body.appendChild(tr);
+        });
+        if(!data.length){
+          body.innerHTML = '<tr><td colspan="4">noch keine Daten</td></tr>';
+        }
       } catch(e) {
-        document.getElementById('tradeRows').innerHTML = '<tr><td colspan="5">Konnte Trades nicht laden.</td></tr>';
+        const body = document.getElementById('tradesBody');
+        body.innerHTML = '<tr><td colspan="4">konnte Trades nicht laden</td></tr>';
       }
-    }
-    loadTrades();
+    })();
   </script>
 </body>
 </html>

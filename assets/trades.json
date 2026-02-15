@@ -1,26 +1,29 @@
-{
-  "updated": "2026-02-15",
-  "items": [
-    {
-      "time": "2026-02-15 09:14",
-      "symbol": "XAUUSD",
-      "side": "BUY",
-      "result": "+42.5",
-      "notes": "TP erreicht"
-    },
-    {
-      "time": "2026-02-14 15:32",
-      "symbol": "XAUUSD",
-      "side": "SELL",
-      "result": "+18.0",
-      "notes": "Teilgewinn"
-    },
-    {
-      "time": "2026-02-14 10:05",
-      "symbol": "XAUUSD",
-      "side": "BUY",
-      "result": "-12.3",
-      "notes": "SL, Risiko klein"
-    }
-  ]
-}
+[
+  {
+    "time": "2026-02-15 09:12",
+    "symbol": "XAUUSD",
+    "side": "BUY",
+    "lots": 0.1,
+    "entry": 2034.2,
+    "exit": 2038.9,
+    "pnl": 47.0
+  },
+  {
+    "time": "2026-02-15 11:03",
+    "symbol": "XAUUSD",
+    "side": "SELL",
+    "lots": 0.1,
+    "entry": 2041.1,
+    "exit": 2036.8,
+    "pnl": 43.0
+  },
+  {
+    "time": "2026-02-14 16:44",
+    "symbol": "XAUUSD",
+    "side": "BUY",
+    "lots": 0.08,
+    "entry": 2022.6,
+    "exit": 2028.1,
+    "pnl": 44.0
+  }
+]
