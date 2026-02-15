@@ -314,7 +314,26 @@ textarea.input{min-height:120px; resize:vertical}
   .grid3{grid-template-columns:1fr}
   .links{display:none}
 }
-</style>
+
+    /* Select dropdown fix (prevents white dropdown) */
+    select.input{
+      -webkit-appearance:none;
+      appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, rgba(233,237,245,.7) 50%),
+        linear-gradient(135deg, rgba(233,237,245,.7) 50%, transparent 50%);
+      background-position:
+        calc(100% - 18px) calc(1em + 2px),
+        calc(100% - 13px) calc(1em + 2px);
+      background-size:5px 5px, 5px 5px;
+      background-repeat:no-repeat;
+      padding-right:34px;
+    }
+    select.input option{
+      background:#0a0c10;
+      color:#e9edf5;
+    }
+    
 </head>
 <body>
   <header class="nav">
@@ -700,7 +719,26 @@ textarea.input{min-height:120px; resize:vertical}
       opacity: .75;
       pointer-events: none; /* inactive for now */
     }
-  </style>
+  
+    /* Select dropdown fix (prevents white dropdown) */
+    select.input{
+      -webkit-appearance:none;
+      appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, rgba(233,237,245,.7) 50%),
+        linear-gradient(135deg, rgba(233,237,245,.7) 50%, transparent 50%);
+      background-position:
+        calc(100% - 18px) calc(1em + 2px),
+        calc(100% - 13px) calc(1em + 2px);
+      background-size:5px 5px, 5px 5px;
+      background-repeat:no-repeat;
+      padding-right:34px;
+    }
+    select.input option{
+      background:#0a0c10;
+      color:#e9edf5;
+    }
+    
 
   <script>
     const TZ_CHAT = (() => {
