@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-<defs>
-  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#ffda66"/>
-    <stop offset="1" stop-color="#f2c94c"/>
-  </linearGradient>
-</defs>
-<rect rx="18" ry="18" width="64" height="64" fill="url(#g)"/>
-<text x="32" y="43" font-size="34" text-anchor="middle" font-family="Arial" font-weight="900" fill="#0a0c10">Z</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffda66"/>
+      <stop offset="1" stop-color="#f2c94c"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g)"/>
+  <path d="M44 40h44v12L58 76h30v12H42V76l30-24H44z" fill="#0a0c10"/>
 </svg>
