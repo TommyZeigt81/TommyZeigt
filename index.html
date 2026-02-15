@@ -6,6 +6,7 @@
   <title>TommyZeigt Copytrading</title>
   <meta name="description" content="Copytrading für XAUUSD (Gold) – klare Regeln, Transparenz, Support. Starte in wenigen Minuten." />
   <link rel="icon" href="assets/favicon.svg" />
+
   <style>
 :root{
   --bg0:#05070a;
@@ -94,9 +95,7 @@ a{color:inherit; text-decoration:none}
   box-shadow: 0 16px 35px rgba(242,201,76,.20);
 }
 .btn-gold:hover{transform: translateY(-1px); box-shadow: 0 18px 45px rgba(242,201,76,.28)}
-.hero{
-  padding:64px 0 22px;
-}
+.hero{ padding:64px 0 22px; }
 .hero-grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -133,10 +132,7 @@ a{color:inherit; text-decoration:none}
   max-width:56ch;
 }
 .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 10px}
-.badges{
-  display:flex; gap:10px; flex-wrap:wrap;
-  margin-top:12px;
-}
+.badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
 .badge{
   font-size:13px;
   color:var(--muted);
@@ -165,16 +161,8 @@ a{color:inherit; text-decoration:none}
   filter: blur(2px);
 }
 .hero-card h3{margin:4px 0 8px; font-size:18px}
-.mini{
-  color:var(--muted);
-  font-size:13px; line-height:1.6;
-}
-.stat-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:12px;
-  margin-top:14px;
-}
+.mini{color:var(--muted); font-size:13px; line-height:1.6;}
+.stat-grid{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:14px;}
 .stat{
   padding:14px;
   border-radius:16px;
@@ -183,31 +171,12 @@ a{color:inherit; text-decoration:none}
 }
 .stat .v{font-size:18px; font-weight:850}
 .stat .k{font-size:12px; color:var(--muted); margin-top:4px}
-.sep{
-  height:1px; background: rgba(255,255,255,.07);
-  margin:14px 0;
-}
-.note{
-  font-size:12px; color:rgba(233,237,245,.72);
-  line-height:1.5;
-}
+.sep{height:1px; background: rgba(255,255,255,.07); margin:14px 0;}
+.note{font-size:12px; color:rgba(233,237,245,.72); line-height:1.5;}
 .section{padding:42px 0}
-.section h2{
-  margin:0 0 10px;
-  font-size:30px;
-  letter-spacing:-.4px;
-  font-weight:900;
-}
-.section p.top{
-  margin:0 0 18px;
-  color:var(--muted);
-  line-height:1.7;
-}
-.grid3{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:16px;
-}
+.section h2{margin:0 0 10px; font-size:30px; letter-spacing:-.4px; font-weight:900;}
+.section p.top{margin:0 0 18px; color:var(--muted); line-height:1.7;}
+.grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;}
 .feature{
   padding:18px;
   border-radius: var(--radius);
@@ -232,23 +201,14 @@ a{color:inherit; text-decoration:none}
 }
 .feature h3{margin:12px 0 8px; font-size:17px}
 .feature p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
-
-.split{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap:18px;
-  align-items:stretch;
-}
+.split{display:grid; grid-template-columns: 1.05fr .95fr; gap:18px; align-items:stretch;}
 .panel{
   padding:20px;
   border-radius: var(--radius);
   background: rgba(10,12,16,.55);
   border:1px solid rgba(255,255,255,.08);
 }
-.steps{
-  display:grid;
-  gap:12px;
-}
+.steps{display:grid; gap:12px;}
 .step{
   display:flex; gap:12px; align-items:flex-start;
   padding:14px;
@@ -267,11 +227,7 @@ a{color:inherit; text-decoration:none}
 }
 .step b{display:block; font-size:14px; margin-bottom:3px}
 .step span{display:block; color:var(--muted); font-size:13px; line-height:1.55}
-
-.form{
-  display:grid;
-  gap:10px;
-}
+.form{display:grid; gap:10px;}
 .input{
   width:100%;
   padding:12px 12px;
@@ -282,9 +238,7 @@ a{color:inherit; text-decoration:none}
   outline:none;
 }
 textarea.input{min-height:120px; resize:vertical}
-.small{
-  font-size:12px; color:rgba(233,237,245,.68); line-height:1.5;
-}
+.small{font-size:12px; color:rgba(233,237,245,.68); line-height:1.5;}
 .footer{
   padding:26px 0 40px;
   border-top:1px solid rgba(255,255,255,.07);
@@ -314,27 +268,9 @@ textarea.input{min-height:120px; resize:vertical}
   .grid3{grid-template-columns:1fr}
   .links{display:none}
 }
-
-    /* Select dropdown fix (prevents white dropdown) */
-    select.input{
-      -webkit-appearance:none;
-      appearance:none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, rgba(233,237,245,.7) 50%),
-        linear-gradient(135deg, rgba(233,237,245,.7) 50%, transparent 50%);
-      background-position:
-        calc(100% - 18px) calc(1em + 2px),
-        calc(100% - 13px) calc(1em + 2px);
-      background-size:5px 5px, 5px 5px;
-      background-repeat:no-repeat;
-      padding-right:34px;
-    }
-    select.input option{
-      background:#0a0c10;
-      color:#e9edf5;
-    }
-    
+  </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="container nav-inner">
@@ -351,9 +287,7 @@ textarea.input{min-height:120px; resize:vertical}
         <a href="#ablauf" data-scroll>Ablauf</a>
         <a href="#proof" data-scroll>Proof</a>
         <a href="#kontakt" data-scroll>Kontakt</a>
-      
         <a href="support.html">Support</a>
-      
         <a href="apply.html">Bewerbung</a>
       </nav>
 
@@ -493,7 +427,7 @@ textarea.input{min-height:120px; resize:vertical}
     <section id="proof" class="section">
       <div class="container">
         <h2>Ergebnisse & Transparenz</h2>
-        <p class="top">Hier verlinkst du deine Performance und den Broker. Wenn du mir deinen PU Prime Link gibst, setze ich ihn perfekt ein.</p>
+        <p class="top">Hier verlinkst du deine Performance und den Broker.</p>
 
         <div class="grid3">
           <div class="feature">
@@ -521,7 +455,6 @@ textarea.input{min-height:120px; resize:vertical}
             <div style="margin-top:12px">
               <a class="btn btn-gold" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">PU Prime Account eröffnen</a>
             </div>
-            <div class="small" style="margin-top:10px">Ersetze https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw== in der index.html mit deinem echten Referral-Link.</div>
           </div>
         </div>
       </div>
@@ -529,62 +462,29 @@ textarea.input{min-height:120px; resize:vertical}
 
     <section class="footer">
       <div class="container">
-        <div>© <span id="y"></span> TommyZeigt Copytrading • Kontakt über <a href="support.html" target="_blank" rel="noopener">Support</a>  <div class="tz-social">
+        <div>© <span id="y"></span> TommyZeigt Copytrading • Kontakt über <a href="support.html" target="_blank" rel="noopener">Support</a>
+          <div class="tz-social">
             <a href="#" aria-disabled="true">YouTube</a>
             <a href="#" aria-disabled="true">Instagram</a>
             <a href="#" aria-disabled="true">TikTok</a>
           </div>
         </div>
-        <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div></div>
+        <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div>
+      </div>
     </section>
   </main>
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script>
-(function(){
-  const toast = document.getElementById('toast');
-  function show(msg){
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(window.__t);
-    window.__t = setTimeout(()=>toast.classList.remove('show'), 3200);
-  }
-
-  // smooth scroll for internal links
-  document.querySelectorAll('a[data-scroll]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const id = a.getAttribute('href');
-      if(id && id.startsWith('#')){
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
-  });
-
-  // simple validation message
-  const form = document.getElementById('leadForm');
-  if(form){
-    form.addEventListener('submit', ()=>{
-      show('Wird gesendet…');
-    });
-  }
-})();
-</script>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Support Floating Button + Live Chat -->
   <button id="tzSupportFab" class="tz-support-fab" type="button" aria-label="Support Chat öffnen">💬</button>
 
   <div id="tzChat" class="tz-chat" aria-hidden="true">
     <div class="tz-chat-head">
       <div class="tz-chat-title">Support</div>
       <div class="tz-chat-actions">
-        <button type="button" class="tz-chip" onclick="TZ_CHAT.setLang('de')">DE</button>
-        <button type="button" class="tz-chip" onclick="TZ_CHAT.setLang('en')">EN</button>
-        <button type="button" class="tz-chat-close" aria-label="Schließen" onclick="TZ_CHAT.close()">✕</button>
+        <button type="button" class="tz-chip" id="tzLangDe">DE</button>
+        <button type="button" class="tz-chip" id="tzLangEn">EN</button>
+        <button type="button" class="tz-chat-close" aria-label="Schließen" id="tzClose">✕</button>
       </div>
     </div>
 
@@ -615,204 +515,4 @@ textarea.input{min-height:120px; resize:vertical}
 
     .tz-chat{
       position: fixed; right: 18px; bottom: 86px; z-index: 10000;
-      width: min(380px, calc(100vw - 36px));
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(10,12,16,.92);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 55px rgba(0,0,0,.55);
-      overflow: hidden;
-      display: none;
-    }
-    .tz-chat.show{ display: block; animation: tzPop .18s ease; }
-    @keyframes tzPop{ from{ transform: translateY(8px); opacity:.0 } to{ transform: translateY(0); opacity:1 } }
-
-    .tz-chat-head{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      padding: 12px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .tz-chat-title{ font-weight: 900; letter-spacing:.2px; }
-    .tz-chat-actions{ display:flex; gap:8px; align-items:center; }
-    .tz-chip{
-      padding: 7px 9px; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: rgba(233,237,245,.92);
-      font-weight: 800; font-size: 12px; cursor:pointer;
-    }
-    .tz-chat-close{
-      padding: 7px 10px; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: rgba(233,237,245,.92);
-      font-weight: 900; cursor:pointer;
-    }
-
-    .tz-chat-body{
-      padding: 12px;
-      height: 180px;
-      overflow: auto;
-    }
-    .tz-bubble{
-      max-width: 90%;
-      padding: 10px 12px;
-      border-radius: 16px;
-      margin: 0 0 10px;
-      border: 1px solid rgba(255,255,255,.10);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .tz-bubble-bot{
-      background: rgba(242,201,76,.08);
-      border-color: rgba(242,201,76,.18);
-      color: rgba(233,237,245,.92);
-    }
-    .tz-bubble-user{
-      margin-left: auto;
-      background: rgba(255,255,255,.04);
-      color: rgba(233,237,245,.88);
-    }
-
-    .tz-chat-form{
-      padding: 12px;
-      display:grid;
-      gap: 8px;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .tz-chat-input{
-      width: 100%;
-      padding: 10px 10px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color: rgba(233,237,245,.92);
-      outline: none;
-      font-size: 13px;
-    }
-    .tz-chat-textarea{ min-height: 84px; resize: vertical; }
-    .tz-chat-send{
-      padding: 11px 12px;
-      border-radius: 14px;
-      border: 0;
-      background: linear-gradient(145deg, rgba(255,218,102,.95), rgba(242,201,76,.85));
-      color: #0a0c10;
-      font-weight: 900;
-      cursor: pointer;
-    }
-    .tz-chat-small{ font-size: 12px; color: rgba(233,237,245,.68); line-height: 1.45; }
-
-    /* Social icons placeholders */
-    .tz-social{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      margin-top: 10px;
-    }
-    .tz-social a{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 9px 10px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color: rgba(233,237,245,.80);
-      font-size: 13px;
-      opacity: .75;
-      pointer-events: none; /* inactive for now */
-    }
-  
-    /* Select dropdown fix (prevents white dropdown) */
-    select.input{
-      -webkit-appearance:none;
-      appearance:none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, rgba(233,237,245,.7) 50%),
-        linear-gradient(135deg, rgba(233,237,245,.7) 50%, transparent 50%);
-      background-position:
-        calc(100% - 18px) calc(1em + 2px),
-        calc(100% - 13px) calc(1em + 2px);
-      background-size:5px 5px, 5px 5px;
-      background-repeat:no-repeat;
-      padding-right:34px;
-    }
-    select.input option{
-      background:#0a0c10;
-      color:#e9edf5;
-    }
-    
-
-  <script>
-    const TZ_CHAT = (() => {
-      const el = document.getElementById('tzChat');
-      const intro = document.getElementById('tzChatIntro');
-      const body = document.getElementById('tzChatBody');
-      const form = document.getElementById('tzChatForm');
-      let lang = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
-
-      const copy = {
-        de: {
-          intro: "Hi 👋 Schreib hier deine Anfrage. Deine Nachricht wird per E-Mail an uns zugestellt. Deine E-Mail-Adresse bleibt für dich unsichtbar.",
-          sent: "Gesendet ✅ Wir melden uns so schnell wie möglich.",
-          err: "Konnte gerade nicht senden. Bitte versuch es später nochmal."
-        },
-        en: {
-          intro: "Hi 👋 Send your request here. Your message will be delivered by email. Our email address stays hidden.",
-          sent: "Sent ✅ We’ll reply as soon as possible.",
-          err: "Could not send right now. Please try again later."
-        }
-      };
-
-      function renderIntro(){
-        intro.textContent = copy[lang].intro;
-      }
-
-      function bubble(text, cls){
-        const div = document.createElement('div');
-        div.className = 'tz-bubble ' + cls;
-        div.textContent = text;
-        body.appendChild(div);
-        body.scrollTop = body.scrollHeight;
-      }
-
-      async function send(payload){
-        const res = await fetch( + formspree + , {
-          method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        return res.ok;
-      }
-
-      function open(){
-        el.classList.add('show');
-        el.setAttribute('aria-hidden', 'false');
-        renderIntro();
-      }
-      function close(){
-        el.classList.remove('show');
-        el.setAttribute('aria-hidden', 'true');
-      }
-      function setLang(l){
-        lang = l;
-        renderIntro();
-      }
-
-      form?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const fd = new FormData(form);
-        const name = String(fd.get('name') || '').trim();
-        const email = String(fd.get('email') || '').trim();
-        const message = String(fd.get('message') || '').trim();
-        if(!name || !email || !message) return;
-
-        bubble(name + ": " + message, "tz-bubble-user");
-        const ok = await send({ name, email, message, source: "LiveChat" });
-        bubble(ok ? copy[lang].sent : copy[lang].err, "tz-bubble-bot");
-        if(ok) form.reset();
-      });
-
-      return { open, close, setLang };
-    })();
-  </script>
-
-</body>
-</html>
+     
