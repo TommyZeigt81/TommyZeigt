@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TommyZeigt Copytrading</title>
-  <meta name="description" content="Copytrading für XAUUSD (Gold) – klare Regeln, Transparenz, Support Support. Starte in wenigen Minuten." />
+  <meta name="description" content="Copytrading für XAUUSD (Gold) – klare Regeln, Transparenz, Support. Starte in wenigen Minuten." />
   <link rel="icon" href="assets/favicon.svg" />
   <style>
 :root{
@@ -330,7 +330,7 @@ textarea.input{min-height:120px; resize:vertical}
       <nav class="links" aria-label="Seitenmenü">
         <a href="#vorteile" data-scroll>Vorteile</a>
         <a href="#ablauf" data-scroll>Ablauf</a>
-        <a href="#proof" data-scroll>Ergebnisse</a>
+        <a href="#proof" data-scroll>Proof</a>
         <a href="#kontakt" data-scroll>Kontakt</a>
       
         <a href="support.html">Support</a>
@@ -351,12 +351,12 @@ textarea.input{min-height:120px; resize:vertical}
           <h1 class="h1"><span class="grad">Copytrading</span> das sich wie ein Business anfühlt.</h1>
           <p class="lead">
             Du willst Trades kopieren, ohne den ganzen Tag am Chart zu kleben.
-            Hier bekommst du einen klaren Ablauf, echtes Ergebnisse und direkten Support Support.
+            Hier bekommst du einen klaren Ablauf, echtes Proof und direkten Support.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-gold" href="#kontakt" data-scroll>Jetzt Platz sichern</a>
-            <a class="btn" href="#proof" data-scroll>Ergebnisse ansehen</a>
+            <a class="btn" href="#proof" data-scroll>Proof ansehen</a>
           </div>
 
           <div class="badges">
@@ -372,12 +372,12 @@ textarea.input{min-height:120px; resize:vertical}
 
           <div class="stat-grid" role="list">
             <div class="stat" role="listitem">
-              <div class="v">Live Ergebnisse</div>
+              <div class="v">Live Proof</div>
               <div class="k">Myfxbook / Trade-History</div>
             </div>
             <div class="stat" role="listitem">
-              <div class="v">Support Support</div>
-              <div class="k">Direktkontakt zu @TommY</div>
+              <div class="v">Support</div>
+              <div class="k">Antwort per E-Mail</div>
             </div>
             <div class="stat" role="listitem">
               <div class="v">Broker Partner</div>
@@ -411,7 +411,7 @@ textarea.input{min-height:120px; resize:vertical}
           <div class="feature">
             <div class="icon">02</div>
             <h3>Transparenz</h3>
-            <p>Du bekommst Ergebnisse über Performance und Trade-Historie. Keine leeren Versprechen – sondern nachvollziehbare Daten.</p>
+            <p>Du bekommst Proof über Performance und Trade-Historie. Keine leeren Versprechen – sondern nachvollziehbare Daten.</p>
           </div>
           <div class="feature">
             <div class="icon">03</div>
@@ -433,14 +433,14 @@ textarea.input{min-height:120px; resize:vertical}
               <div class="num">1</div>
               <div>
                 <b>Support öffnen</b>
-                <span>Schreib @TommY und sag “Start”. Du bekommst sofort die Anleitung.</span>
+                <span>Schick uns deine Anfrage über Support. Du bekommst Antwort per E-Mail.</span>
               </div>
             </div>
             <div class="step">
               <div class="num">2</div>
               <div>
                 <b>Broker Account anlegen</b>
-                <span>Nutze PU Prime (Referral) und richte dein Konto ein. Link unten im Ergebnisse-Bereich.</span>
+                <span>Nutze PU Prime (Referral) und richte dein Konto ein. Link unten im Proof-Bereich.</span>
               </div>
             </div>
             <div class="step">
@@ -471,7 +471,7 @@ textarea.input{min-height:120px; resize:vertical}
 
     <section id="proof" class="section">
       <div class="container">
-        <h2>Verifizierte Ergebnisse</h2>
+        <h2>Ergebnisse & Transparenz</h2>
         <p class="top">Hier verlinkst du deine Performance und den Broker. Wenn du mir deinen PU Prime Link gibst, setze ich ihn perfekt ein.</p>
 
         <div class="grid3">
@@ -486,7 +486,7 @@ textarea.input{min-height:120px; resize:vertical}
 
           <div class="feature">
             <div class="icon">✉</div>
-            <h3>Support Support</h3>
+            <h3>Support</h3>
             <p>Direkter Kontakt & Setup Hilfe.</p>
             <div style="margin-top:12px">
               <a class="btn btn-gold" href="support.html" target="_blank" rel="noopener">Support öffnen</a>
@@ -514,18 +514,7 @@ textarea.input{min-height:120px; resize:vertical}
             <a href="#" aria-disabled="true">TikTok</a>
           </div>
         </div>
-        <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.  <div class="tz-social">
-            <a href="#" aria-disabled="true">YouTube</a>
-            <a href="#" aria-disabled="true">Instagram</a>
-            <a href="#" aria-disabled="true">TikTok</a>
-          </div>
-        </div>
-        <div class="tz-social">
-            <a href="#" aria-disabled="true">YouTube</a>
-            <a href="#" aria-disabled="true">Instagram</a>
-            <a href="#" aria-disabled="true">TikTok</a>
-          </div>
-        </div>
+        <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div></div>
     </section>
   </main>
 
@@ -783,13 +772,6 @@ textarea.input{min-height:120px; resize:vertical}
 
       return { open, close, setLang };
     })();
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const fab = document.getElementById('tzSupportFab');
-      if(fab) fab.addEventListener('click', () => TZ_CHAT.open());
-      document.addEventListener('keydown', (e) => { if(e.key === 'Escape') TZ_CHAT.close(); });
-    });
-    // end chat
   </script>
 
 </body>
