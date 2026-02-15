@@ -1,0 +1,26 @@
+{
+  "updated": "2026-02-15",
+  "items": [
+    {
+      "time": "2026-02-15 09:14",
+      "symbol": "XAUUSD",
+      "side": "BUY",
+      "result": "+42.5",
+      "notes": "TP erreicht"
+    },
+    {
+      "time": "2026-02-14 15:32",
+      "symbol": "XAUUSD",
+      "side": "SELL",
+      "result": "+18.0",
+      "notes": "Teilgewinn"
+    },
+    {
+      "time": "2026-02-14 10:05",
+      "symbol": "XAUUSD",
+      "side": "BUY",
+      "result": "-12.3",
+      "notes": "SL, Risiko klein"
+    }
+  ]
+}
