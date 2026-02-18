@@ -1,462 +1,188 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TommyZeigt – Copytrading Erfahrung</title>
-  <meta name="description" content="TommyZeigt dokumentiert seine echte Copytrading Erfahrung – transparent, nachvollziehbar, mit Live-Ergebnissen (Myfxbook) und klarer Schritt-für-Schritt Anleitung." />
-  <link rel="icon" href="assets/favicon.svg" />
-  <style>
-    :root{
-      --bg0:#05070a; --bg1:#0b0d12;
-      --text:#e9edf5; --muted:rgba(233,237,245,.72);
-      --gold:#f2c94c; --gold2:#ffda66;
-      --shadow:0 22px 70px rgba(0,0,0,.55);
-      --r:22px; --max:1180px;
-      --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family:var(--font); color:var(--text);
-      background:
-        radial-gradient(900px 600px at 10% 0%, rgba(242,201,76,.10), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(120,170,255,.10), transparent 60%),
-        radial-gradient(700px 520px at 50% 100%, rgba(242,201,76,.08), transparent 65%),
-        linear-gradient(180deg,var(--bg0),var(--bg1));
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:0 auto;padding:0 22px}
-    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(5,7,10,.74);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{width:36px;height:36px;border-radius:14px;background:linear-gradient(145deg,rgba(255,218,102,.95),rgba(242,201,76,.70));box-shadow:0 10px 30px rgba(242,201,76,.22);position:relative}
-    .logo:after{content:"Z";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:950;color:#0a0c10}
-    .brand-text{display:flex;flex-direction:column;line-height:1.1}
-    .brand-text .top{font-weight:900;letter-spacing:.2px}
-    .brand-text .sub{font-size:12px;color:var(--muted)}
-    .links{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .links a{font-size:13px;color:rgba(233,237,245,.76);padding:9px 10px;border-radius:14px;border:1px solid transparent}
-    .links a:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
-    .cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:var(--text);font-weight:850;font-size:14px;cursor:pointer;transition:transform .12s ease,filter .12s ease,border-color .12s ease;user-select:none}
-    .btn:hover{transform:translateY(-1px);filter:brightness(1.05);border-color:rgba(255,255,255,.14)}
-    .btn-gold{border:0;color:#0a0c10;background:linear-gradient(145deg,var(--gold2),var(--gold));box-shadow:0 18px 45px rgba(242,201,76,.22)}
-    .btn-soft{background:rgba(255,255,255,.03)}
-    .hero{padding:58px 0 26px}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
-    .kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;border:1px solid rgba(242,201,76,.22);background:rgba(242,201,76,.08);color:rgba(255,218,102,.95);font-size:13px}
-    h1{margin:14px 0 10px;font-size:50px;line-height:1.05;letter-spacing:-.9px;font-weight:950}
-    .grad{background:linear-gradient(90deg,#ffffff,#ffe9a6 45%,#f2c94c);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.75;max-width:66ch}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 8px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .badge{font-size:13px;color:rgba(233,237,245,.78);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .card{border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border-radius:var(--r);box-shadow:var(--shadow)}
-    .side-card{padding:18px;position:relative;overflow:hidden}
-    .side-card:before{content:"";position:absolute;inset:-140px -160px auto auto;width:360px;height:360px;background:radial-gradient(circle at 30% 30%,rgba(242,201,76,.28),transparent 60%);filter:blur(2px)}
-    .side-card h3{margin:4px 0 10px;font-size:18px}
-    .mini{color:rgba(233,237,245,.70);font-size:13px;line-height:1.6}
-    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-    .stat{padding:14px;border-radius:16px;background:rgba(10,12,16,.55);border:1px solid rgba(255,255,255,.08)}
-    .stat .v{font-size:16px;font-weight:900}
-    .stat .k{font-size:12px;color:rgba(233,237,245,.68);margin-top:4px}
-    .sep{height:1px;background:rgba(255,255,255,.07);margin:14px 0}
-    .note{font-size:12px;color:rgba(233,237,245,.70);line-height:1.55}
-    .section{padding:44px 0}
-    .section h2{margin:0 0 10px;font-size:30px;letter-spacing:-.4px;font-weight:950}
-    .section p.top{margin:0 0 18px;color:var(--muted);line-height:1.75;max-width:82ch}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{padding:18px;border-radius:var(--r);background:rgba(10,12,16,.55);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;min-height:168px}
-    .feature:before{content:"";position:absolute;inset:auto auto -200px -170px;width:360px;height:360px;background:radial-gradient(circle at 60% 35%,rgba(242,201,76,.22),transparent 60%)}
-    .icon{width:46px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(242,201,76,.10);border:1px solid rgba(242,201,76,.22);color:rgba(255,218,102,.95);font-weight:950}
-    .feature h3{margin:12px 0 8px;font-size:17px}
-    .feature p{margin:0;color:rgba(233,237,245,.72);line-height:1.7;font-size:14px}
-    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
-    .panel{padding:20px;border-radius:var(--r);background:rgba(10,12,16,.55);border:1px solid rgba(255,255,255,.08)}
-    .steps{display:grid;gap:12px}
-    .step{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
-    .num{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(242,201,76,.12);border:1px solid rgba(242,201,76,.22);color:rgba(255,218,102,.95);font-weight:950;flex:0 0 auto}
-    .step b{display:block;font-size:14px;margin-bottom:3px}
-    .step span{display:block;color:rgba(233,237,245,.70);font-size:13px;line-height:1.55}
-    .form{display:grid;gap:10px}
-    .input{width:100%;padding:12px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:var(--text);outline:none;font-size:14px}
-    textarea.input{min-height:120px;resize:vertical}
-    select.input option{background:#0a0c10;color:#e9edf5}
-    .small{font-size:12px;color:rgba(233,237,245,.68);line-height:1.5}
-    .embed-card{padding:0;overflow:hidden}
-    .embed-head{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(233,237,245,.78);font-size:13px;line-height:1.5;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .footer{padding:26px 0 44px;border-top:1px solid rgba(255,255,255,.07);color:rgba(233,237,245,.70);font-size:12px}
-    .footer a{color:rgba(233,237,245,.86);text-decoration:underline}
-    .tz-support-fab{position:fixed;right:18px;bottom:18px;z-index:9999;width:56px;height:56px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(145deg,rgba(242,201,76,.18),rgba(242,201,76,.08));color:#e9edf5;font-size:22px;cursor:pointer;box-shadow:0 18px 55px rgba(0,0,0,.55);transition:transform .12s ease,filter .12s ease}
-    .tz-support-fab:hover{transform:translateY(-1px);filter:brightness(1.08)}
-    .tz-chat{position:fixed;right:18px;bottom:86px;z-index:10000;width:min(390px,calc(100vw - 36px));border-radius:20px;border:1px solid rgba(255,255,255,.10);background:rgba(10,12,16,.92);backdrop-filter:blur(12px);box-shadow:0 18px 55px rgba(0,0,0,.55);overflow:hidden;display:none}
-    .tz-chat.show{display:block;animation:tzPop .18s ease}
-    @keyframes tzPop{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
-    .tz-chat-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .tz-chat-title{font-weight:950}
-    .tz-chat-actions{display:flex;gap:8px;align-items:center}
-    .tz-chip{padding:7px 9px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:rgba(233,237,245,.92);font-weight:900;font-size:12px;cursor:pointer}
-    .tz-chat-close{padding:7px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:rgba(233,237,245,.92);font-weight:950;cursor:pointer}
-    .tz-chat-body{padding:12px;height:180px;overflow:auto}
-    .tz-bubble{max-width:92%;padding:10px 12px;border-radius:16px;margin:0 0 10px;border:1px solid rgba(255,255,255,.10);font-size:13px;line-height:1.5}
-    .tz-bubble-bot{background:rgba(242,201,76,.08);border-color:rgba(242,201,76,.18);color:rgba(233,237,245,.92)}
-    .tz-bubble-user{margin-left:auto;background:rgba(255,255,255,.04);color:rgba(233,237,245,.88)}
-    .tz-chat-form{padding:12px;display:grid;gap:8px;border-top:1px solid rgba(255,255,255,.08)}
-    .tz-chat-input{width:100%;padding:10px 10px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:rgba(233,237,245,.92);outline:none;font-size:13px}
-    .tz-chat-textarea{min-height:84px;resize:vertical}
-    .tz-chat-send{padding:11px 12px;border-radius:14px;border:0;background:linear-gradient(145deg,rgba(255,218,102,.95),rgba(242,201,76,.85));color:#0a0c10;font-weight:950;cursor:pointer}
-    .tz-chat-small{font-size:12px;color:rgba(233,237,245,.68);line-height:1.45}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);display:none;z-index:9997}
-    .modal-backdrop.show{display:block}
-    .modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(720px,calc(100% - 28px));border-radius:22px;border:1px solid rgba(255,255,255,.12);background:rgba(10,12,16,.92);box-shadow:var(--shadow);display:none;z-index:9998;overflow:hidden}
-    .modal.show{display:block;animation:tzPop .18s ease}
-    .modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .modal-title{font-weight:950}
-    .modal-close{padding:8px 10px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:rgba(233,237,245,.92);font-weight:950;cursor:pointer}
-    .modal-body{padding:14px}
-    @media (max-width:980px){.hero-grid,.split{grid-template-columns:1fr}h1{font-size:40px}}
-    @media (max-width:780px){.grid3{grid-template-columns:1fr}.links{display:none}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TommyZeigt Copytrading</title>
+<meta name="description" content="TommyZeigt dokumentiert Copytrading Ergebnisse transparent. Live Proof über Myfxbook, Wochenupdates, klarer Ablauf.">
+<style>
+:root{
+  --bg:#06080c; --card:#0f141d; --card2:#101826;
+  --text:#e9edf5; --muted:#a7b0c2;
+  --gold:#f2c94c; --line:rgba(255,255,255,.06);
+  --r:16px; --max:1100px;
+  --shadow:0 18px 55px rgba(0,0,0,.55);
+  --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:radial-gradient(900px 600px at 10% 0%, rgba(242,201,76,.10), transparent 60%),linear-gradient(180deg,#05070a,#0b0d12);color:var(--text)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:auto;padding:28px 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(11,15,23,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;letter-spacing:.2px}
+.menu{display:flex;gap:10px;flex-wrap:wrap}
+.menu a{font-size:13px;color:rgba(233,237,245,.76);padding:10px 10px;border-radius:12px;border:1px solid transparent}
+.menu a:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;background:var(--gold);color:#0a0c10;font-weight:900}
+.btn2{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);color:var(--text);font-weight:850}
+.hero{padding:18px 0 10px}
+h1{font-size:42px;margin:16px 0 6px;letter-spacing:-.6px}
+.gold{color:var(--gold)}
+p{color:var(--muted);line-height:1.7;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.kpi{background:rgba(16,24,38,.65)}
+.kpi h3{margin:0 0 6px}
+.section{padding:18px 0}
+.section h2{margin:0 0 10px;font-size:26px;letter-spacing:-.3px}
+.news-item{padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+.news-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.news-date{font-size:12px;color:rgba(233,237,245,.65)}
+.news-title{font-weight:900}
+.news-summary{margin-top:6px;color:rgba(233,237,245,.75);font-size:14px;line-height:1.6}
+footer{margin-top:30px;padding:30px 0;text-align:center;font-size:13px;color:#a7b0c2;border-top:1px solid var(--line)}
+.small{font-size:12px;color:rgba(233,237,245,.65);line-height:1.55}
+@media(max-width:820px){.menu{display:none}h1{font-size:34px}}
+</style>
 </head>
 <body id="top">
-<header class="nav">
-  <div class="container nav-inner">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div class="brand-text">
-        <div class="top">TommyZeigt</div>
-        <div class="sub">Copytrading Erfahrung • Transparenz • Myfxbook</div>
-      </div>
+<header>
+  <div class="container nav">
+    <div class="brand">TommyZeigt Copytrading</div>
+    <div class="menu">
+      <a href="#performance">Performance</a>
+      <a href="#news">News</a>
+      <a href="#start">Start</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="archive.html">Archiv</a>
+      <a href="admin.html">Admin</a>
     </div>
-    <nav class="links" aria-label="Seitenmenü">
-      <a href="#top" data-scroll>Start</a>
-      <a href="#story" data-scroll>Über mich</a>
-      <a href="#setup" data-scroll>Setup</a>
-      <a href="#results" data-scroll>Ergebnisse</a>
-      <a href="#start" data-scroll>So startest du</a>
-      <a href="#kontakt" data-scroll>Kontakt</a>
-      <a href="investor-login.html">Investor Zone</a>
-    </nav>
-    <div class="cta">
-      <a class="btn btn-soft" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook</a>
-      <button class="btn btn-gold" type="button" data-open="apply">Bewerbung</button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn2" target="_blank" rel="noopener" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259">Myfxbook</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==">Broker</a>
     </div>
   </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker">Echte Ergebnisse • Dokumentiert • Kein Marketing</div>
-      <h1><span class="grad">Ich zeige</span> meine echte Copytrading Erfahrung.</h1>
-      <p class="lead">
-        Ich bin Investor und nutze Copytrading selbst. Auf dieser Seite dokumentiere ich meine Ergebnisse, meinen Ablauf und meine Learnings – transparent und nachvollziehbar.
-        Keine Versprechen. Nur echte Praxis.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="#results" data-scroll>Ergebnisse ansehen</a>
-        <a class="btn" href="#start" data-scroll>So kannst du starten</a>
+<main class="container">
+  <section class="hero">
+    <h1>Transparente <span class="gold">Copytrading</span> Ergebnisse</h1>
+    <p>Live Proof über Myfxbook + wöchentliche Updates jeden Freitag 20:00. Keine Versprechen, nur echte Dokumentation.</p>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card kpi">
+        <h3>Start</h3>
+        <div class="small">06.02.2026</div>
       </div>
-      <div class="badges">
-        <div class="badge">Live Tracking via Myfxbook</div>
-        <div class="badge">Fokus: Gold (XAUUSD)</div>
-        <div class="badge">Support per Live-Chat & Formular</div>
+      <div class="card kpi">
+        <h3>Fokus</h3>
+        <div class="small">Gold (XAUUSD)</div>
+      </div>
+      <div class="card kpi">
+        <h3>Live Proof</h3>
+        <div class="small">Myfxbook Portfolio</div>
       </div>
     </div>
+  </section>
 
-    <aside class="card side-card">
-      <h3>Transparenz Snapshot</h3>
-      <div class="mini">Du siehst öffentlich nachvollziehbare Daten (Myfxbook) und bekommst einen klaren Start-Ablauf. Ich begleite dich beim Setup, wenn du willst.</div>
-
-      <div class="stat-grid" role="list" aria-label="Highlights">
-        <div class="stat" role="listitem"><div class="v">Live Ergebnisse</div><div class="k">öffentlich / nachvollziehbar</div></div>
-        <div class="stat" role="listitem"><div class="v">Setup Klarheit</div><div class="k">Schritt-für-Schritt</div></div>
-        <div class="stat" role="listitem"><div class="v">Ehrlich</div><div class="k">mit Risiko-Hinweis</div></div>
-        <div class="stat" role="listitem"><div class="v">Business Look</div><div class="k">Premium Branding</div></div>
+  <section id="performance" class="section">
+    <h2>Performance</h2>
+    <div class="card">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-weight:900">Live Performance prüfen</div>
+          <div class="small">Falls Einbettungen im Browser blocken: Button nutzen (empfohlen).</div>
+        </div>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259">Live öffnen</a>
       </div>
-
-      <div class="sep"></div>
-      <div class="note">Hinweis: Trading ist mit Risiko verbunden. Ergebnisse aus der Vergangenheit sind keine Garantie für zukünftige Entwicklungen.</div>
-    </aside>
-  </div>
-</section>
-
-<section id="story" class="section">
-  <div class="container">
-    <h2>Über mich</h2>
-    <p class="top">
-      Ich bin Tommy. Ich trade nicht für andere und gebe keine Finanzberatung. Ich nutze Copytrading selbst als Investor und dokumentiere hier transparent meinen Weg, meine Ergebnisse und meine Learnings.
-      Ziel ist ein realistischer Einblick – ohne Versprechen und ohne Show.
-    </p>
-
-    <div class="grid3">
-      <div class="feature"><div class="icon">01</div><h3>Warum TommyZeigt</h3><p>Weil ich lieber zeige, wie es wirklich läuft – statt irgendwas zu versprechen.</p></div>
-      <div class="feature"><div class="icon">02</div><h3>Wofür ich stehe</h3><p>Transparenz, klare Schritte, saubere Kommunikation und ein seriöser Auftritt.</p></div>
-      <div class="feature"><div class="icon">03</div><h3>Für wen das ist</h3><p>Für Menschen, die Copytrading verstehen wollen und einen klaren Start-Ablauf suchen.</p></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="setup" class="section">
-  <div class="container split">
-    <div class="panel">
-      <h2>Mein Setup</h2>
-      <p class="top">Das ist die Struktur, mit der ich arbeite. Du kannst sie als Orientierung nutzen. Details können je nach Konto und System variieren.</p>
+  <section id="news" class="section">
+    <h2>News</h2>
+    <p class="small">Aktuelle Posts (letzte 30 Tage). Ältere Beiträge wandern automatisch ins Archiv.</p>
+    <div id="newsList" class="grid" style="grid-template-columns:1fr; margin-top:12px"></div>
+    <div style="margin-top:12px">
+      <a class="btn2" href="archive.html">Archiv ansehen</a>
+    </div>
+  </section>
 
-      <div class="steps">
-        <div class="step"><div class="num">1</div><div><b>Broker & Konto</b><span>Ein Konto mit klaren Regeln (Einzahlung, Risiko, Hebel). Ich nutze einen Broker-Partner-Link für den Start.</span></div></div>
-        <div class="step"><div class="num">2</div><div><b>Copy Verbindung</b><span>Das Konto wird mit einem Copy-System verbunden, damit Trades automatisch übernommen werden können.</span></div></div>
-        <div class="step"><div class="num">3</div><div><b>Kontrolle & Risiko</b><span>Risikoeinstellungen prüfen, Lot/Multiplier sauber setzen, Drawdown verstehen – bevor du startest.</span></div></div>
+  <section id="start" class="section">
+    <h2>So startest du</h2>
+    <div class="grid">
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:6px">1 Kontakt</div>
+        <div class="small">Schreib mir kurz dein Ziel und deine Erfahrung.</div>
       </div>
-
-      <div class="sep"></div>
-      <div class="mini">Broker-Link: <a class="btn btn-gold" style="margin-top:10px" href="https://de.puprime.partners/forex-trading-account/?utm_source=promo&utm_medium=social&utm_campaign=RAF&utm_term=NA&utm_content=NA&c=jOA3lsRMqyLSI0uMpPz5Yw==" target="_blank" rel="noopener">Broker öffnen</a></div>
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:6px">2 Konto</div>
+        <div class="small">Broker Konto eröffnen und Einzahlung festlegen (z. B. ab 500€).</div>
+      </div>
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:6px">3 Copy aktivieren</div>
+        <div class="small">Konto verbinden, Risiko einstellen, starten.</div>
+      </div>
     </div>
+  </section>
 
-    <div class="panel" id="kontakt">
-      <h2>Kontakt</h2>
-      <p class="top">Wenn du Fragen hast oder Hilfe beim Setup willst: schick mir eine Anfrage. Ich antworte per E-Mail.</p>
-
-      <form id="leadForm" class="form" action="https://formspree.io/f/mkovrqqq" method="POST">
-        <input type="hidden" name="_subject" value="Kontakt – TommyZeigt" />
-        <input class="input" type="text" name="name" placeholder="Name" required />
-        <input class="input" type="email" name="email" placeholder="E-Mail" required />
-        <textarea class="input" name="message" placeholder="Worum geht es? (z.B. Setup, Verständnis, Start)" required></textarea>
-        <button class="btn btn-gold" type="submit">Anfrage senden</button>
-        <div class="small">Mit dem Absenden akzeptierst du, dass du kontaktiert wirst. Keine Weitergabe an Dritte.</div>
+  <section id="kontakt" class="section">
+    <h2>Kontakt</h2>
+    <div class="card">
+      <form action="https://formspree.io/f/mkovrqqq" method="POST" style="display:grid;gap:10px">
+        <input name="name" placeholder="Name" required style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:#e9edf5">
+        <input name="email" type="email" placeholder="E-Mail" required style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:#e9edf5">
+        <textarea name="message" placeholder="Nachricht" required style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:#e9edf5;min-height:120px"></textarea>
+        <button class="btn" type="submit">Senden</button>
+        <div class="small">Hinweis: Trading ist mit Risiko verbunden. Ergebnisse aus der Vergangenheit sind keine Garantie für die Zukunft.</div>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="results" class="section">
-  <div class="container">
-    <h2>Ergebnisse</h2>
-    <p class="top">Hier findest du die öffentlich einsehbaren Daten. Falls ein Browser das Einbetten blockt, nutze den Button – das ist normal.</p>
-
-    <div class="grid3">
-      <div class="feature"><div class="icon">↗</div><h3>Myfxbook Live</h3><p>Performance & Historie öffentlich nachvollziehbar.</p><div style="margin-top:12px"><a class="btn btn-gold" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook öffnen</a></div></div>
-      <div class="feature"><div class="icon">⚠</div><h3>Risiko Hinweis</h3><p>Copytrading kann Gewinne bringen, aber auch Verluste. Handle verantwortungsvoll und starte realistisch.</p></div>
-      <div class="feature"><div class="icon">✓</div><h3>Mein Fokus</h3><p>Struktur, Transparenz und klare Schritte – statt Hype.</p></div>
-    </div>
-
-    <div style="height:16px"></div>
-
-    <div class="card embed-card">
-      <div class="embed-head">
-        <div>Live-Ansicht (falls verfügbar)</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btn-soft" href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Direkt öffnen</a>
-          <button class="btn" type="button" data-open="apply">Bewerbung</button>
-        </div>
-      </div>
-      <iframe title="Myfxbook" src="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" style="width:100%;height:640px;border:0;"></iframe>
-    </div>
-  </div>
-</section>
-
-<section id="start" class="section">
-  <div class="container split">
-    <div class="panel">
-      <h2>So kannst du starten</h2>
-      <p class="top">Ein klarer Ablauf – ohne Technik-Stress.</p>
-
-      <div class="steps">
-        <div class="step"><div class="num">1</div><div><b>Bewerbung / Kontakt</b><span>Schick deine Anfrage. Ich kläre kurz, ob das Setup zu dir passt.</span></div></div>
-        <div class="step"><div class="num">2</div><div><b>Broker Konto</b><span>Account eröffnen und Einzahlung festlegen (realistisch starten, z. B. ab 500€).</span></div></div>
-        <div class="step"><div class="num">3</div><div><b>Copy verbinden</b><span>Konto verbinden, Risiko einstellen, Testphase starten.</span></div></div>
-      </div>
-
-      <div class="sep"></div>
-      <div class="note">Ich bin kein Finanzberater. Alles dient der Information und zeigt nur meine Erfahrung.</div>
-    </div>
-
-    <div class="panel">
-      <h2>Investment Stufen</h2>
-      <p class="top">Als Orientierung – du entscheidest selbst, was zu dir passt.</p>
-
-      <div class="steps">
-        <div class="step"><div class="num">€</div><div><b>500€ – Einstieg</b><span>Für den Start und erste Erfahrungen.</span></div></div>
-        <div class="step"><div class="num">€</div><div><b>1.000€ – Standard</b><span>Solider Einstieg mit mehr Spielraum.</span></div></div>
-        <div class="step"><div class="num">€</div><div><b>3.000€ – Fortgeschritten</b><span>Für strukturiertere Umsetzung.</span></div></div>
-        <div class="step"><div class="num">€</div><div><b>5.000€ – Premium</b><span>Mehr Möglichkeiten bei Risiko-Management.</span></div></div>
-        <div class="step"><div class="num">€</div><div><b>10.000€+ – VIP</b><span>Für Investoren mit klarer Planung.</span></div></div>
-      </div>
-
-      <div style="margin-top:12px">
-        <button class="btn btn-gold" type="button" data-open="apply">Bewerbung starten</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="footer">
-  <div class="container">
-    <div>© <span id="y"></span> TommyZeigt • <a href="https://www.myfxbook.com/portfolio/tommyzeigt/11931259" target="_blank" rel="noopener">Myfxbook</a></div>
-    <div style="margin-top:8px">Risk Disclaimer: Trading kann zu Verlusten führen. Handle verantwortungsvoll.</div>
-  </div>
-</section>
+  <footer>
+    © <span id="y"></span> TommyZeigt • <a href="archive.html">Archiv</a> • <a href="admin.html">Admin</a>
+  </footer>
 </main>
 
-<div id="applyBackdrop" class="modal-backdrop" aria-hidden="true"></div>
-<div id="applyModal" class="modal" aria-hidden="true" role="dialog" aria-label="Bewerbung">
-  <div class="modal-head">
-    <div class="modal-title">Bewerbung</div>
-    <button class="modal-close" type="button" data-close="apply">✕</button>
-  </div>
-  <div class="modal-body">
-    <div class="mini" style="margin-bottom:10px">Bewerbung ist Pflicht. Danach bekommst du Rückmeldung per E-Mail.</div>
-
-    <form id="applyForm" class="form" method="POST" action="https://formspree.io/f/mkovrqqq">
-      <input type="hidden" name="_subject" value="Bewerbung – TommyZeigt" />
-      <input type="hidden" name="_redirect" value="apply-thankyou.html" />
-      <input class="input" name="name" placeholder="Name" required />
-      <input class="input" name="email" type="email" placeholder="E-Mail" required />
-
-      <select class="input" name="investment_level" required>
-        <option value="" disabled selected>Investment Stufe auswählen</option>
-        <option value="500 Einstieg">500€ – Einstieg</option>
-        <option value="1000 Standard">1.000€ – Standard</option>
-        <option value="3000 Fortgeschritten">3.000€ – Fortgeschritten</option>
-        <option value="5000 Premium">5.000€ – Premium</option>
-        <option value="10000 VIP">10.000€+ – VIP</option>
-      </select>
-
-      <select class="input" name="experience" required>
-        <option value="" disabled selected>Erfahrung auswählen</option>
-        <option value="Anfaenger">Anfänger</option>
-        <option value="Grundkenntnisse">Grundkenntnisse</option>
-        <option value="Erfahren">Erfahren</option>
-      </select>
-
-      <textarea class="input" name="message" placeholder="Kurz: Was ist dein Ziel & wie viel Zeit hast du?" required></textarea>
-
-      <button class="btn btn-gold" type="submit">Bewerbung senden</button>
-      <div class="small">Hinweis: Trading ist mit Risiken verbunden. Vergangene Ergebnisse sind keine Garantie für zukünftige Entwicklungen.</div>
-    </form>
-  </div>
-</div>
-
-<button id="tzSupportFab" class="tz-support-fab" type="button" aria-label="Support Chat öffnen">💬</button>
-
-<div id="tzChat" class="tz-chat" aria-hidden="true">
-  <div class="tz-chat-head">
-    <div class="tz-chat-title">Support</div>
-    <div class="tz-chat-actions">
-      <button type="button" class="tz-chip" onclick="TZ_CHAT.setLang('de')">DE</button>
-      <button type="button" class="tz-chip" onclick="TZ_CHAT.setLang('en')">EN</button>
-      <button type="button" class="tz-chat-close" aria-label="Schließen" onclick="TZ_CHAT.close()">✕</button>
-    </div>
-  </div>
-
-  <div class="tz-chat-body" id="tzChatBody">
-    <div class="tz-bubble tz-bubble-bot" id="tzChatIntro"></div>
-  </div>
-
-  <form class="tz-chat-form" id="tzChatForm">
-    <input class="tz-chat-input" name="email" type="email" placeholder="E-Mail" required />
-    <input class="tz-chat-input" name="name" type="text" placeholder="Name" required />
-    <textarea class="tz-chat-input tz-chat-textarea" name="message" placeholder="Nachricht" required></textarea>
-    <button class="tz-chat-send" type="submit">Senden</button>
-    <div class="tz-chat-small">Deine Nachricht wird per E-Mail zugestellt. Deine E-Mail bleibt verborgen.</div>
-  </form>
-</div>
-
 <script>
-(function(){
-  const backdrop = document.getElementById('applyBackdrop');
-  const modal = document.getElementById('applyModal');
+document.getElementById('y').textContent = new Date().getFullYear();
 
-  function openApply(){
-    backdrop.classList.add('show');
-    modal.classList.add('show');
-    backdrop.setAttribute('aria-hidden','false');
-    modal.setAttribute('aria-hidden','false');
-  }
-  function closeApply(){
-    backdrop.classList.remove('show');
-    modal.classList.remove('show');
-    backdrop.setAttribute('aria-hidden','true');
-    modal.setAttribute('aria-hidden','true');
-  }
+function daysBetween(a,b){
+  const ms = 24*60*60*1000;
+  return Math.floor((a-b)/ms);
+}
 
-  document.querySelectorAll('a[data-scroll]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const id = a.getAttribute('href');
-      if(id && id.startsWith('#')){
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
-  });
+async function loadNews(){
+  const el = document.getElementById('newsList');
+  try{
+    const res = await fetch('posts.json', {cache:'no-store'});
+    const posts = await res.json();
+    const now = new Date();
+    const recent = posts
+      .map(p => ({...p, _d: new Date(p.date + "T00:00:00")}))
+      .sort((x,y)=> y._d - x._d)
+      .filter(p => daysBetween(now, p._d) <= 30);
 
-  document.querySelectorAll('[data-open="apply"]').forEach(el=>el.addEventListener('click', openApply));
-  document.querySelectorAll('[data-close="apply"]').forEach(el=>el.addEventListener('click', closeApply));
-  backdrop.addEventListener('click', closeApply);
-  document.addEventListener('keydown', (e)=>{ if(e.key === "Escape") closeApply(); });
-
-  document.getElementById('y').textContent = new Date().getFullYear();
-
-  window.TZ_CHAT = (() => {
-    const el = document.getElementById('tzChat');
-    const intro = document.getElementById('tzChatIntro');
-    const body = document.getElementById('tzChatBody');
-    const form = document.getElementById('tzChatForm');
-    const fab = document.getElementById('tzSupportFab');
-
-    let lang = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
-
-    const copy = {
-      de: { intro: "Hi 👋 Schreib hier deine Anfrage. Deine Nachricht wird per E-Mail zugestellt. Du bekommst Antwort per E-Mail.", sent: "Gesendet ✅ Wir melden uns so schnell wie möglich.", err: "Konnte gerade nicht senden. Bitte versuch es später nochmal." },
-      en: { intro: "Hi 👋 Send your request here. You’ll receive a reply by email.", sent: "Sent ✅ We’ll reply as soon as possible.", err: "Could not send right now. Please try again later." }
-    };
-
-    function renderIntro(){ intro.textContent = copy[lang].intro; }
-
-    function bubble(text, cls){
-      const div = document.createElement('div');
-      div.className = 'tz-bubble ' + cls;
-      div.textContent = text;
-      body.appendChild(div);
-      body.scrollTop = body.scrollHeight;
+    if(!recent.length){
+      el.innerHTML = '<div class="news-item">Noch keine News. Erstelle den ersten Post über Admin.</div>';
+      return;
     }
 
-    async function send(payload){
-      const res = await fetch("https://formspree.io/f/mkovrqqq", {
-        method: "POST",
-        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      return res.ok;
-    }
-
-    function open(){ el.classList.add('show'); el.setAttribute('aria-hidden', 'false'); renderIntro(); }
-    function close(){ el.classList.remove('show'); el.setAttribute('aria-hidden', 'true'); }
-    function setLang(l){ lang = l; renderIntro(); }
-
-    fab?.addEventListener('click', ()=>{ el.classList.contains('show') ? close() : open(); });
-
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      const name = String(fd.get('name') || '').trim();
-      const email = String(fd.get('email') || '').trim();
-      const message = String(fd.get('message') || '').trim();
-      if(!name || !email || !message) return;
-
-      bubble(name + ": " + message, "tz-bubble-user");
-      const ok = await send({ name, email, message, source: "LiveChat" });
-      bubble(ok ? copy[lang].sent : copy[lang].err, "tz-bubble-bot");
-      if(ok) form.reset();
-    });
-
-    renderIntro();
-    return { open, close, setLang };
-  })();
-})();
+    el.innerHTML = recent.map(p => `
+      <div class="news-item">
+        <div class="news-top">
+          <div class="news-title">${p.title}</div>
+          <div class="news-date">${p.date}</div>
+        </div>
+        <div class="news-summary">${p.summary || ''}</div>
+      </div>
+    `).join('');
+  }catch(e){
+    el.innerHTML = '<div class="news-item">Konnte posts.json nicht laden. Prüfe ob posts.json im gleichen Ordner liegt.</div>';
+  }
+}
+loadNews();
 </script>
 </body>
 </html>

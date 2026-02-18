@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archiv – TommyZeigt</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#06080c;color:#e9edf5}
+.container{max-width:900px;margin:auto;padding:28px 20px}
+a{color:#f2c94c;text-decoration:none}
+.card{background:#0f141d;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;margin-top:12px}
+.small{color:#a7b0c2;line-height:1.6}
+.item{padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);margin-top:10px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.title{font-weight:900}
+.date{font-size:12px;color:rgba(233,237,245,.65)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div style="font-weight:900;font-size:22px">Archiv</div>
+    <div class="small">Alle Beiträge, die älter als 30 Tage sind, erscheinen hier automatisch.</div>
+    <div style="margin-top:10px"><a href="index.html">← Zurück</a></div>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<script>
+function daysBetween(a,b){
+  const ms = 24*60*60*1000;
+  return Math.floor((a-b)/ms);
+}
+
+async function load(){
+  const el = document.getElementById('list');
+  try{
+    const res = await fetch('posts.json', {cache:'no-store'});
+    const posts = await res.json();
+    const now = new Date();
+    const older = posts
+      .map(p => ({...p, _d: new Date(p.date + "T00:00:00")}))
+      .sort((x,y)=> y._d - x._d)
+      .filter(p => daysBetween(now, p._d) > 30);
+
+    if(!older.length){
+      el.innerHTML = '<div class="card">Noch nichts im Archiv.</div>';
+      return;
+    }
+
+    el.innerHTML = older.map(p => `
+      <div class="item">
+        <div class="top">
+          <div class="title">${p.title}</div>
+          <div class="date">${p.date}</div>
+        </div>
+        <div class="small" style="margin-top:6px">${p.content || p.summary || ''}</div>
+      </div>
+    `).join('');
+  }catch(e){
+    el.innerHTML = '<div class="card">Konnte posts.json nicht laden.</div>';
+  }
+}
+load();
+</script>
+</body>
+</html>

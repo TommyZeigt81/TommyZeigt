@@ -1,7 +1,64 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Support • TommyZeigt</title>
-<meta http-equiv="refresh" content="0; url=index.html">
-<link rel="icon" href="assets/favicon.svg" /></head><body style="margin:0;background:#05070a;color:#eef2fb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;">
-<div style="max-width:860px;margin:0 auto;padding:48px 18px;">
-<div style="border:1px solid rgba(255,255,255,.10);border-radius:22px;background:rgba(255,255,255,.04);padding:18px;">
-Support lädt… <a href="index.html" style="color:#ffda66;text-decoration:none">zur Startseite</a>
-</div></div></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support • TommyZeigt</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="top">TommyZeigt</div>
+          <div class="sub">Support</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="index.html">Startseite</a>
+        <a class="btn btn-gold" href="apply.html">Bewerbung</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container split">
+      <div class="panel">
+        <h2>Support Anfrage</h2>
+        <p class="top">Beschreib kurz dein Problem. Ich melde mich per E-Mail zurück.</p>
+
+        <form class="form" action="https://formspree.io/f/mkovrqqq" method="POST">
+          <input class="input" type="text" name="name" placeholder="Name" required />
+          <input class="input" type="email" name="email" placeholder="E-Mail" required />
+          <input class="input" type="text" name="topic" placeholder="Thema (z.B. Setup, Verbindung, Auszahlung)" />
+          <textarea class="input" name="message" placeholder="Deine Nachricht" required></textarea>
+          <button class="btn btn-gold" type="submit">Support senden</button>
+          <div class="small">Du bekommst eine Antwort per E-Mail. Keine Weitergabe an Dritte.</div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Häufige Themen</h2>
+        <p class="top">Damit du schneller weiterkommst.</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><b>Verbindung</b><span>Kontrolle: Login-Daten, Server, Leserechte. Danach neu verbinden.</span></div></div>
+          <div class="step"><div class="num">2</div><div><b>Trades werden nicht kopiert</b><span>Kontrolle: Kopier-Status, Lot-Regel, Risikolimit, Marktzeiten.</span></div></div>
+          <div class="step"><div class="num">3</div><div><b>Fragen zur Performance</b><span>Myfxbook + Screens im Performance System. Details im Mitgliederbereich.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> TommyZeigt</div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

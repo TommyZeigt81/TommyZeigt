@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin – News erstellen</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#06080c;color:#e9edf5}
+.container{max-width:900px;margin:auto;padding:28px 20px}
+a{color:#f2c94c;text-decoration:none}
+.card{background:#0f141d;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;margin-top:12px}
+.input{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:#e9edf5}
+.btn{display:inline-block;padding:12px 16px;background:#f2c94c;color:#0a0c10;border-radius:12px;font-weight:900;border:0;cursor:pointer}
+.small{color:#a7b0c2;line-height:1.6;font-size:13px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0b0f17;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div style="font-weight:900;font-size:22px">Admin • News Post erstellen</div>
+    <div class="small">Wichtig: GitHub Pages ist statisch. Diese Admin-Seite erstellt dir den Post als JSON-Eintrag. Danach fügst du ihn in posts.json ein (GitHub Web-Editor) und fertig.</div>
+    <div style="margin-top:10px"><a href="index.html">← Zurück</a></div>
+  </div>
+
+  <div class="card">
+    <div class="small" style="margin-bottom:8px">Datum (YYYY-MM-DD)</div>
+    <input id="date" class="input" placeholder="2026-02-21">
+    <div class="small" style="margin:12px 0 8px">Titel</div>
+    <input id="title" class="input" placeholder="Wochenupdate">
+    <div class="small" style="margin:12px 0 8px">Kurztext (Summary)</div>
+    <input id="summary" class="input" placeholder="Woche: +4,2% • 14 Trades • Fokus: XAUUSD">
+    <div class="small" style="margin:12px 0 8px">Text (optional, für Archiv)</div>
+    <textarea id="content" class="input" style="min-height:120px" placeholder="Details…"></textarea>
+
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="build">JSON erzeugen</button>
+      <button class="btn" id="copy" style="background:rgba(255,255,255,.08);color:#e9edf5;border:1px solid rgba(255,255,255,.12)">Kopieren</button>
+    </div>
+
+    <div class="small" style="margin-top:12px">So benutzt du es</div>
+    <div class="small">1 Klick JSON erzeugen</div>
+    <div class="small">2 JSON kopieren</div>
+    <div class="small">3 posts.json auf GitHub öffnen</div>
+    <div class="small">4 Eintrag oben einfügen (mit Komma beachten) → speichern</div>
+
+    <div style="margin-top:12px"><pre id="out">{}</pre></div>
+  </div>
+</div>
+
+<script>
+function isoToday(){
+  const d = new Date();
+  const mm = String(d.getMonth()+1).padStart(2,'0');
+  const dd = String(d.getDate()).padStart(2,'0');
+  return d.getFullYear() + "-" + mm + "-" + dd;
+}
+document.getElementById('date').value = isoToday();
+
+function slug(date,title){
+  return (date + "-" + title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')).slice(0,60);
+}
+
+document.getElementById('build').addEventListener('click', ()=>{
+  const date = document.getElementById('date').value.trim();
+  const title = document.getElementById('title').value.trim();
+  const summary = document.getElementById('summary').value.trim();
+  const content = document.getElementById('content').value.trim();
+
+  const entry = {
+    id: slug(date,title || "post"),
+    date: date || isoToday(),
+    title: title || "News",
+    summary: summary || "",
+    content: content || ""
+  };
+  document.getElementById('out').textContent = JSON.stringify(entry, null, 2);
+});
+
+document.getElementById('copy').addEventListener('click', async ()=>{
+  const txt = document.getElementById('out').textContent;
+  try{
+    await navigator.clipboard.writeText(txt);
+    alert("Kopiert ✅ Jetzt in posts.json einfügen.");
+  }catch(e){
+    alert("Konnte nicht automatisch kopieren. Markiere den Text manuell und kopiere ihn.");
+  }
+});
+</script>
+</body>
+</html>

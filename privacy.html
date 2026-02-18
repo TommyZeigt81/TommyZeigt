@@ -1,30 +1,49 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Datenschutz – TommyZeigt Copytrading</title>
-  <meta name="theme-color" content="#0b0b10"/>
-  <link rel="icon" href="assets/logo.svg"/>
-  <style>
-    body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#07070a; color:#f2f2f2}
-    .wrap{max-width:960px; margin:0 auto; padding:26px 18px}
-    .card{margin-top:18px; background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); border-radius:22px; padding:22px}
-    h1{margin:0 0 10px; font-size:28px}
-    p{color:rgba(242,242,242,.78); line-height:1.6}
-    a{color:#f6d36b; text-decoration:underline}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutz • TommyZeigt</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <a href="index.html">Zurück</a>
-    <div class="card">
-      <h1>Datenschutz</h1>
-      <p>Wenn du das Formular nutzt, werden die von dir eingegebenen Daten an den Formularanbieter (Formspree) übertragen, damit deine Anfrage zugestellt wird.</p>
-      <p>Verarbeitet werden können: Name, E-Mail, Telegram (optional) und Nachricht.</p>
-      <p>Wenn du keine Daten über das Formular senden möchtest, nutze bitte Telegram.</p>
-      <p>Hinweis: Diese Vorlage ersetzt keine rechtliche Beratung. Für eine rechtssichere Datenschutzerklärung solltest du dir eine passende, geprüfte Version erstellen lassen.</p>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="top">TommyZeigt</div>
+          <div class="sub">Datenschutz</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="index.html">Startseite</a>
+        <a class="btn" href="support.html">Support</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="panel">
+        <h2>Datenschutz</h2>
+        <p class="top">Kurzfassung: Wir nutzen Formspree, um Anfragen per E-Mail zu erhalten. Keine Weitergabe an Dritte.</p>
+        <div class="small">
+          Bitte ergänze hier dein offizielles Impressum/Datenschutz, wenn du öffentlich wirbst.
+          Für Deutschland ist ein vollständiges Impressum meist Pflicht, sobald es geschäftlich wird.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> TommyZeigt</div>
     </div>
   </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
